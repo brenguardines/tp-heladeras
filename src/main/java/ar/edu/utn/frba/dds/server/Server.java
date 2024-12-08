@@ -54,7 +54,8 @@ public class Server {
             });
 
             config.fileRenderer(new JavalinRenderer().register("hbs", (path, model, context) -> {
-                Handlebars handlebars = new Handlebars(new ClassPathTemplateLoader("/templates", ".hbs"));
+                Handlebars handlebars = new Handlebars(new ClassPathTemplateLoader("/templates", ""));
+
                 try {
                     String templatePath = "templates/" + (path.endsWith(".hbs") ? path.replace(".hbs", "") : path);
                     Template template = handlebars.compile(templatePath);
