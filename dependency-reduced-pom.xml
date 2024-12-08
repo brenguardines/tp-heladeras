@@ -7,6 +7,15 @@
   <version>1.0-SNAPSHOT</version>
   <url>https://github.com/dds-utn</url>
   <build>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <includes>
+          <include>META-INF/persistence.xml</include>
+          <include>**/*.hbs</include>
+        </includes>
+      </resource>
+    </resources>
     <plugins>
       <plugin>
         <artifactId>maven-surefire-plugin</artifactId>
