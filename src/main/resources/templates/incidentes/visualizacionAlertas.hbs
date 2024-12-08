@@ -1,0 +1,38 @@
+{{#partial "titulo-y-descripcion"}}
+    <title>Visualización de Alertas</title>
+    <meta name="description" content="Visualización de Alertas">
+{{/partial}}
+
+{{#partial "js-extra"}}
+    <script src="../js/reportes.js"></script>
+{{/partial}}
+
+{{#partial "contenido"}}
+    <div class="container text-center justify-content-center" style="color: black !important;">
+        <div class="col-12">
+            <h2 class="titulo-carga-visualizacion">Visualización de Alertas</h2>
+        </div>
+        <div class="col-12">
+            <div class="contenedor-blanco d-flex flex-column justify-content-between align-items-center">
+                <form action="">
+                    <div class="form-group">
+                        <label for="tipoAlerta" class="imputs-texto">Tipo de Alerta</label>
+                        <select id="tipoAlerta" class="form-control" style="width: 1000px" onchange="cambiarAlerta()">
+                            <option value="">Seleccione un tipo de alerta</option>
+                            <option value="fraude">Fraude</option>
+                            <option value="conexion">Falta de Conexión</option>
+                            <option value="temperatura">Temperatura</option>
+                        </select>
+                    </div>
+                    <div class="form-group text-left" style="width: 100%;">
+                        <label for="alertas" class="imputs-texto">Lista de Alertas:</label>
+                        <textarea id="alertas" class="form-control" rows="10" readonly>
+                        </textarea>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{{/partial}}
+
+{{> templates/baseFondoBlanco }}

@@ -1,0 +1,25 @@
+{{#partial "titulo-y-descripcion"}}
+    <title>Carga de Archivo CSV</title>
+    <meta name="description" content="Carga de Archivo CSV">
+{{/partial}}
+
+{{#partial "contenido"}}
+    <div class="container text-center justify-content-center d-flex align-items-center" style="height: 100vh; color: black;">
+        <div class="col-12">
+            <h2 class="titulo-carga">Carga de Archivo CSV</h2>
+            <div class="contenedor-gris d-flex flex-column justify-content-center align-items-center">
+                <form action="/menuAdmin/cargaCSV" method="post" enctype="multipart/form-data">
+                    <div class="form-group text-center">
+                        <label for="archivoCSV" class="labelCSV">Adjuntar archivo</label>
+                        <input type="file" class="inputCSV" id="archivoCSV" name="archivoCSV" required>
+                    </div>
+                    <div class="centrar">
+                        <input type="submit" value="Cargar" class="enviarCSV">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{{/partial}}
+
+{{> templates/baseFondoBlanco }}

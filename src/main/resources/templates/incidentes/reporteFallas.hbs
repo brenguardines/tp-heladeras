@@ -1,0 +1,54 @@
+{{#partial "titulo-y-descripcion"}}
+    <title>Reporte de fallas técnicas</title>
+    <meta name="description" content="Reporte de fallas técnicas">
+{{/partial}}
+
+{{#partial "titulo-h1"}}
+    <h1 class="titulo" style="color: black !important;">Reporte de fallas técnicas
+        <img class="imgDerecha" alt="llave inglesa" src="../img/llaveInglesa.png"></h1>
+{{/partial}}
+
+{{#partial "contenido"}}
+    <form>
+        <section class="flexContainer">
+            <div class="divContainer" style="width:60%">
+                <label>Fecha del incidente</label><br>
+                <input type="date" class="input" style="width:100%">
+            </div>
+            <div style="width:36%">
+                <label>Hora del incidente</label><br>
+                <input type="time" class="input" style="width:100%">
+            </div>
+
+        </section>
+
+        <section class="flexContainer">
+            <div class="divContainer" style="width:60%">
+                <label>Heladera</label> <br>
+                <select class="input" style="width:100%">
+                    {{#each heladera}}
+                        <option>{{this.nombre}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            <div style="width:36%">
+                <label>Foto</label> <br>
+                <input type="file" value="Adjuntar foto" class="input" style="width:100%">
+            </div>
+        </section>
+
+        <section class="flexContainer">
+            <div class="divContainer" style="width:98%">
+                <label>Descripción</label> <br>
+                <input type="text" class="input" style="width:100%">
+            </div>
+
+        </section>
+
+        <div class="centrar">
+            <input type="submit" value="Reportar" class="enviar">
+        </div>
+    </form>
+{{/partial}}
+
+{{> templates/baseFondoBlanco }}

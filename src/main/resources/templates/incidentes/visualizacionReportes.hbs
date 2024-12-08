@@ -1,0 +1,38 @@
+{{#partial "titulo-y-descripcion"}}
+    <title>Visualización de Reportes</title>
+    <meta name="description" content="Visualización de Reportes">
+{{/partial}}
+
+{{#partial "js-extra"}}
+    <script src="../js/reportes.js"></script>
+{{/partial}}
+
+{{#partial "contenido"}}
+    <div class="container text-center justify-content-center"  style="color: black !important;">
+        <div class="col-12">
+            <h2 class="titulo-carga-visualizacion">Visualización de Reportes</h2>
+        </div>
+        <div class="col-12">
+            <div class="contenedor-blanco d-flex flex-column justify-content-between align-items-center">
+                <form action="">
+                    <div class="form-group">
+                        <label for="tipoReporte" class="imputs-texto">Tipo de Reporte</label>
+                        <select id="tipoReporte" class="form-control" style="width: 1000px" onchange="cambiarReporte()">
+                            <option value="">Seleccione un tipo de reporte</option>
+                            <option value="falla">Falla por heladera</option>
+                            <option value="movimiento">Movimiento de Viandas por Heladera</option>
+                            <option value="viandasColaborador">Viandas por Colaborador</option>
+                        </select>
+                    </div>
+                    <div class="form-group text-left" style="width: 100%;">
+                        <label for="reportes" class="imputs-texto">Lista de Reportes:</label>
+                        <textarea id="reportes" class="form-control" rows="10" readonly>
+                        </textarea>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{{/partial}}
+
+{{> templates/baseFondoBlanco }}

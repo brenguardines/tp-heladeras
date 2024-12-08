@@ -1,0 +1,42 @@
+{{#partial "titulo-y-descripcion"}}
+    <title>Mapa de Heladeras</title>
+    <meta name="description" content="Mapa de Heladeras">
+{{/partial}}
+
+{{#partial "css-extra"}}
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="mapaHeladeras.css" />
+{{/partial}}
+
+{{#partial "titulo-h1"}}
+    <h1 class="titulo" style="color: black !important;">Mapa de Heladeras</h1>
+{{/partial}}
+
+{{#partial "js-extra"}}
+    <script type="text/javascript" src="/js/mapaHeladeras.js"></script>
+{{/partial}}
+
+{{#partial "contenido"}}
+    <main>
+        <section>
+            <div class="flexContainer">
+                <div class="divContainer" id="map" style="width: 90%; height: 500px;"></div>
+
+                <!-- Inyectar coordenadas como variable JavaScript -->
+                <script type="text/javascript">
+                    const coordenadas = [
+                        {{#each coordenadas}}
+                            {
+                                lat: {{this.lat}},
+                                lng: {{this.lng}}
+                            }{{#unless @last}},{{/unless}}
+                        {{/each}}
+                    ];
+                </script>
+            </div>
+        </section>
+    </main>
+{{/partial}}
+
+{{ templates/baseFondoBlanco }}

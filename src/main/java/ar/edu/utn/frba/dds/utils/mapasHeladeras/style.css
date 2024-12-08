@@ -1,0 +1,9 @@
+/* Ajustar el tamaño del mapa */
+#map {
+    height: 800px; /* Altura del mapa, ajustada para dejar espacio al header y otros elementos */
+    width: 90%;
+    margin-top: 100px; /* Deja espacio por debajo del menú */
+    z-index: 0; /* Asegura que el mapa quede detrás del menú */
+	margin-left: auto;
+	margin-right: auto;
+}

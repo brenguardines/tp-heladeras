@@ -1,0 +1,28 @@
+{{#partial "titulo-y-descripcion"}}
+    <title>Administrar Personas Vulnerables Existentes</title>
+    <meta name="description" content="Administrar Personas Vulnerables Existentes">
+{{/partial}}
+
+{{#partial "js-extra"}}
+    <script type="text/javascript" src="/js/gestionHeladeras.js"></script>
+{{/partial}}
+
+{{#partial "contenido"}}
+    <main>
+        <h1 class="titulo">Administrar Personas Vulnerables Existentes</h1> <br>
+        <section class="flexContainer">
+            <div class="divContainer" style="width:100%">
+                <label style="color: gray !important; font-size: large;">Persona Vulnerable</label>
+                <select class="input" style="width:100%" required>
+                    {{#each personasVulnerables}}
+                        <option>{{this.nombreYApellido.nombre}} {{this.nombreYApellido.apellido}} - {{this.direccion.calle}} {{this.direccion.altura}} - {{this.id}}</option>
+                    {{/each}}
+                </select>
+                <br>
+                <br>
+                <input type="submit" value="Editar" class="boton-rojo" id="editarPersonaVulnerableBoton">
+                <input type="submit" value="Eliminar" class="boton-rojo" id="eliminarPersonaVulnerableBoton">
+            </div>
+    </main>
+{{/partial}}
+{{> templates/baseFondoBlancoSinMenu }}

@@ -1,0 +1,42 @@
+{{#partial "titulo-y-descripcion"}}
+    <title>Canjeá tus puntos</title>
+    <meta name="description" content="Canjeá tus puntos">
+{{/partial}}
+
+{{#partial "titulo-h1"}}
+    <h1 class="titulo" style="color: black !important;">Canjeá tus puntos</h1>
+{{/partial}}
+
+{{#partial "contenido"}}
+    <main>
+        <form action="/canjearOferta" method="post">
+            <div class="points">
+                <div class="circle"></div>
+                <p>{{puntos}} <br> Puntos disponibles</p>
+            </div>
+            <div class="products-navigation">
+                <div class="products">
+                    {{#each ofertas}}
+                        <div class="product">
+                            <label>
+                                <input type="checkbox" class="checkbox" value="{{this.id}}" name="id">
+                                <div class="product-info">
+                                    <h2>{{this.nombre}}</h2>
+                                    <p>{{this.puntosNecesariosParaAccederAlBeneficio}}</p>
+                                    <p>{{this.beneficio.descripcion}}</p>
+                                </div>
+                            </label>
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+            <div class="buttons">
+                <button>Canjear</button>
+                <button>Volver al menú</button>
+            </div>
+
+        </form>
+    </main>
+{{/partial}}
+
+{{> templates/baseFondoBlanco }}

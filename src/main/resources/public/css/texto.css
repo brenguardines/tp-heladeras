@@ -1,0 +1,75 @@
+.tipografia-monserrat {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.texto-rojo-negrita {
+    color: #DC143C !important;
+    font-weight: bold !important;
+}
+
+.texto-blanco-negrita {
+    color: white !important;
+    font-weight: bold !important;
+}
+
+.texto-negro-negrita {
+    color: black !important;
+    font-weight: bold !important;
+}
+
+.titulo{
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 2%;
+    margin-top: 3%;
+    margin-left: 200px;
+}
+
+.titulo-carga{
+    text-align: center;
+    font-weight: bold;
+    padding-bottom: 30px;
+}
+
+.titulo-carga-visualizacion{
+    text-align: center;
+    font-weight: bold;
+    padding-bottom: 30px;
+    margin-top: 20px;
+}
+
+.caja{
+    margin:8px;
+    border: 1px solid rgb(70,69,69);   
+}
+
+.centrar{
+    text-align: center;
+}
+
+.input{
+    border-radius: 14px;
+    border:1px solid gray;
+    height:80px;
+    font-size: 30px;
+    text-align: left;
+}
+
+.labelCSV{
+    width:50%; 
+    font-size: 2rem;
+}
+
+.inputCSV{
+    width:50%; 
+    font-size: 1rem;
+    padding-top: 100px;
+    padding-block: 100px;
+}
+
+.titulo {
+    margin: 0; /* Eliminar márgenes predeterminados */
+    padding: 20px; /* Espacio alrededor del título */
+    color: black; /* Color del texto del título */
+    font-size: 36px; /* Ajusta el tamaño de la fuente si es necesario */
+}

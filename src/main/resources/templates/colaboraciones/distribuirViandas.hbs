@@ -1,0 +1,72 @@
+{{#partial "titulo-y-descripcion"}}
+    <title>Distribuir Viandas</title>
+    <meta name="description" content="Distribuir Viandas">
+{{/partial}}
+{{#partial "js-extra"}}
+    <script type="text/javascript" src="/js/popUp.js"></script>
+{{/partial}}
+{{#partial "titulo-h1"}}
+    <h1 class="titulo" style="color: black !important;">Distribuir Viandas</h1>
+{{/partial}}
+
+{{#partial "contenido"}}
+    <main>
+        <form action="/colaboraciones/distribuirViandas" method="POST">
+
+            <section class="flexContainer">
+                <div class="divContainer" style="width:100%">
+                    <label for="heladeraDeOrigen">Heladera de Origen</label>
+                    <select name="heladeraDeOrigen" id="heladeraDeOrigen" class="input" required style="width:100%">
+                        <option disabled selected value="">Seleccione una heladera</option>
+                        {{#each heladera}}
+                            <option value="{{this.id}}">{{this.nombre}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+            </section>
+
+            <section class="flexContainer">
+                <div class="divContainer" style="width:100%">
+                    <label for="heladeraDeDestino">Heladera de Destino</label>
+                    <select name="heladeraDeDestino" id="heladeraDeDestino" class="input" required style="width:100%">
+                        <option disabled selected value="">Seleccione una heladera</option>
+                        {{#each heladera}}
+                            <option value="{{this.id}}">{{this.nombre}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+            </section>
+
+            <section class="flexContainer">
+                <div class="divContainer" style="width:98%">
+                    <label for="cantidadDeViandasAMover">Cantidad de Viandas a Mover</label>
+                    <input type="number" name="cantidadDeViandasAMover" id="cantidadDeViandasAMover" class="input" required placeholder="Cantidad de Viandas a Mover" style="width:100%" min="1">
+                </div>
+            </section>
+
+            <section class="flexContainer">
+                <div class="divContainer" style="width:100%">
+                    <label for="motivoDeLaDistribucion">Motivo de la Distribución</label>
+                    <select name="motivoDeLaDistribucion" id="motivoDeLaDistribucion" class="input" required style="width:100%">
+                        <option disabled selected value="">Seleccione un motivo</option>
+                        {{#each motivosDeDistribucion}}
+                            <option value="{{this}}">{{this}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+            </section>
+
+            <section class="flexContainer">
+                <div class="divContainer" style="width:100%; position: relative;">
+                    <label for="fechaDeColaboracion" style="color: gray !important; font-size: large;">Fecha de Distribución</label><br>
+                    <input type="date" name="fechaDeColaboracion" id="fechaDeColaboracion" class="input" required style="width:100%">
+                </div>
+            </section>
+
+            <div class="centrar">
+                <input type="submit" value="Continuar" class="enviar" id="colaboracionExitosaBoton">
+            </div>
+        </form>
+    </main>
+{{/partial}}
+{{> templates/baseFondoBlanco }}

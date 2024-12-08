@@ -1,0 +1,20 @@
+{{#partial "titulo-y-descripcion"}}
+    <title>Tipo de Persona a Registrar</title>
+    <meta name="description" content="Tipo de Persona a Registrar">
+{{/partial}}
+
+{{#block "js-extra"}}
+    <script type="text/javascript" src="/js/tipoDePersonaParaRegistro.js"></script>
+{{/block}}
+
+{{#partial "contenido"}}
+    <main>
+        <h1 class="titulo">Selecciona el tipo de persona que se desea Registrar:</h1> <br>
+        <section class="boton-container">
+            <button class="boton-accion hundido" id="registroPersonaHumanaBoton">Persona Humana</button>
+            <button class="boton-accion hundido" id="registroPersonaJuridicaBoton">Persona Jurídica</button>
+        </section>
+    </main>
+{{/partial}}
+
+{{> templates/baseFondoBlanco }}

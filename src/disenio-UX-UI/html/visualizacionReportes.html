@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Visualización de Reportes</title>
+    <meta name="description" content="Visualización de Reportes">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../css/texto.css">
+    <link rel="stylesheet" type="text/css" href="../css/fondos.css">
+    <link rel="stylesheet" type="text/css" href="../css/botones.css">
+    <link rel="stylesheet" type="text/css" href="../css/contenedores.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../css/confirmar.css">
+    <link rel="stylesheet" type="text/css" href="../css/pantallaPuntos.css">
+    <link rel="stylesheet" type="text/css" href="../css/canjeo.css">
+    <link rel="stylesheet" type="text/css" href="../css/pocosPuntos.css"> -->
+    <link rel="stylesheet" type="text/css" href="../css/menu.css">
+
+    <script type="text/javascript" src="/js/menu.js"></script>
+    <script src="../js/reportes.js"></script>
+</head>
+<body class="fondo-gris tipografia-monserrat">
+    <button id="burger-menu" class="burger"></button>
+    <div class="background"></div>
+    <div class="menu">
+        <nav>
+            <a href="realizarContribucion.html">Realizar Contribución</a>
+            <a href="visualizacionAlertas.html">Visualización de Alertas</a> 
+            <a href="visualizacionReportes.html">Visualización de Reportes</a> 
+            <a href="reporteFallas.html">Reportes de Fallas</a> 
+            <a href="cargaArchivoCSV.html">Carga de CSV de Colaboraciones</a> 
+            <a href="pantallaPuntos.html">Canjeo de Puntos</a> 
+            <a href="registroDePersonasVulnerables.html">Registro de Personas Vulnerables</a> 
+            <a href="suscribirseAHeladera.html">Susribirse a Heladera</a> 
+        </nav>
+    </div>
+    <div class="container text-center justify-content-center"  style="color: black !important;">
+        <div class="col-12">
+            <h2 class="titulo-carga-visualizacion">Visualización de Reportes</h2>
+        </div>
+        <div class="col-12">
+            <div class="contenedor-blanco d-flex flex-column justify-content-between align-items-center">
+                <form action="">
+                    <div class="form-group">
+                        <label for="tipoReporte" class="imputs-texto">Tipo de Reporte</label>
+                        <select id="tipoReporte" class="form-control" style="width: 1000px" onchange="cambiarReporte()">
+                            <option value="">Seleccione un tipo de reporte</option>
+                            <option value="falla">Falla por heladera</option>
+                            <option value="movimiento">Movimiento de Viandas por Heladera</option>
+                            <option value="viandasColaborador">Viandas por Colaborador</option>
+                        </select>                                             
+                    </div>
+                    <div class="form-group text-left" style="width: 100%;">
+                        <label for="reportes" class="imputs-texto">Lista de Reportes:</label>
+                        <textarea id="reportes" class="form-control" rows="10" readonly>
+                        </textarea>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

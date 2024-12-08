@@ -1,0 +1,35 @@
+{{#partial "titulo-y-descripcion"}}
+    <title>Susribirse a Heladera</title>
+    <meta name="description" content="Susribirse a Heladera">
+{{/partial}}
+
+{{#partial "js-extra"}}
+    <script type="text/javascript" src="/js/popUp.js"></script>
+{{/partial}}
+
+{{#partial "titulo-h1"}}
+    <h1 class="titulo" style="color: black !important;">Susribirse a Heladera</h1>
+{{/partial}}
+
+{{#partial "contenido"}}
+    <main>
+        <form>
+            <section class="flexContainer">
+                <div class="divContainer" style="width:100%">
+                    <select class="input" style="width:100%">
+                        <option disabled selected>Heladera</option>
+                        {{#each heladera}}
+                            <option>{{this.nombre}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+            </section>
+
+            <div class="centrar">
+                <input type="submit" value="Suscribirse" class="enviar" id="suscripcionExitosaBoton">
+            </div>
+        </form>
+    </main>
+{{/partial}}
+
+{{> templates/baseFondoBlanco }}

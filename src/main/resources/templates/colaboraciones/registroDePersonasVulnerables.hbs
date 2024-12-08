@@ -1,0 +1,95 @@
+{{#partial "titulo-y-descripcion"}}
+    <title>Registro de Persona Vulnerable</title>
+    <meta name="description" content="Registro de Persona Vulnerable">
+{{/partial}}
+
+{{#partial "css-extra"}}
+    <link rel="stylesheet" type="text/css" href="../css/personaVulnerable.css">
+{{/partial}}
+
+{{#partial "titulo-h1"}}
+    <h1 class="titulo" style="color: black !important;">Registro de Persona Vulnerable</h1>
+{{/partial}}
+
+{{#partial "js-extra"}}
+    <script type="text/javascript" src="/js/personaVulnerable.js"></script>
+{{/partial}}
+{{#partial "contenido"}}
+    <main>
+        <form method="post" action="/colaboraciones/registrarPersona">
+            <section class="flexContainer">
+                <div class="divContainer" style="width:50%">
+                    <input type="text" class="input" name="nombre" required placeholder=" Nombre" style="width:100%">
+                </div>
+                <div class="divContainer" style="width:50%">
+                    <input type="text" class="input" name="apellido" required placeholder=" Apellido" style="width:100%">
+                </div>
+            </section>
+
+            <section class="flexContainer">
+                <div class="divContainer" style="width:100%; position: relative;">
+                    <label style="color: gray !important; font-size: large;">Fecha de Nacimiento</label><br>
+                    <input type="date" class="input" name="fechaDeNacimiento" required>
+                    <img src="../img/Calendar.svg" alt="icono-calendario" class="calendar-icon">
+                </div>
+            </section>
+
+            <section class="flexContainer">
+                <div class="divContainer" style="width:20%">
+                    <label style="color: gray !important; font-size: large;">Documento</label>
+                    <select class="input" style="width:100%" name="tipoDocumento" id="tipoDocumento" min="0" max="99999999" step="0">
+                        <option value="">Tipo</option>
+                        <option value="DNI">DNI</option>
+                        <option value="LC">LC</option>
+                        <option value="LC">LE</option>
+                        <option value="PASAPORTE">PASAPORTE</option>
+                    </select>
+                </div>
+                <div class="divContainer" style="width:80%">
+                    <label style="font-size: large;">Numero</label>
+                    <input type="number" name="dni" class="input" id="dni" placeholder=" Número" style="width:100%">
+                </div>
+            </section>
+
+            <section class="flexContainer">
+                <div class="divContainer" style="width:33%">
+                    <label style="color: gray !important; font-size: large;">Domicilio</label>
+                    <input type="text" class="input" name="calle" id="calle" placeholder=" Calle" style="width:100%">
+                </div>
+                <div class="divContainer" style="width:33%">
+                    <label style="font-size: large;">Altura</label>
+                    <input type="number" class="input" name="altura" id="altura" placeholder=" Altura" style="width:100%">
+                </div>
+                <div class="divContainer" style="width:33%">
+                    <label style="font-size: large;">Código Postal</label>
+                    <input type="number" class="input" name="codigoPostal" id="codigoPostal" placeholder=" Código Postal" style="width:100%">
+                </div>
+            </section>
+            <section class="flexContainer">
+                <div style="width:33%">
+                    <label style="color: gray !important; font-size: large;">¿Tiene hijos?</label>
+                    <input type="checkbox" class="input" id="hijos">
+                </div>
+
+                <div class="divContainer" style="width:33%" id="cantidadDeHijos">
+                    <label style="font-size: large; color: black">Cantidad</label>
+                    <input type="number" class="input" name="cantidad" id="cantidad" placeholder=" CantidadDeHijos" style="width:100%">
+                </div>
+            </section>
+
+            <section class="flexContainer">
+                <div class="divContainer" style="width:98%">
+                    <button class="input aniadirMenor hundido" id="aniadirMenorBoton" >Añadir Menor A Cargo
+                        <img src="../img/+.svg" alt="icono-+" class="+-icon" style="width: 30px;">
+                    </button>
+                </div>
+            </section>
+
+            <div class="centrar">
+                <input type="submit" value="Registrar" class="enviar" id="registroExitosoBoton">
+            </div>
+        </form>
+    </main>
+{{/partial}}
+
+{{> templates/baseFondoBlanco }}

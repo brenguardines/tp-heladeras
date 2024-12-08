@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Donar Oferta</title>
+    <meta name="description" content="Donar Oferta">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../css/texto.css">
+    <link rel="stylesheet" type="text/css" href="../css/fondos.css">
+    <link rel="stylesheet" type="text/css" href="../css/botones.css">
+    <link rel="stylesheet" type="text/css" href="../css/contenedores.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../css/confirmar.css">
+    <link rel="stylesheet" type="text/css" href="../css/pantallaPuntos.css">
+    <link rel="stylesheet" type="text/css" href="../css/canjeo.css">
+    <link rel="stylesheet" type="text/css" href="../css/pocosPuntos.css"> -->
+    <link rel="stylesheet" type="text/css" href="../css/menu.css">
+
+    <script type="text/javascript" src="/js/menu.js"></script>
+	<script type="text/javascript" src="/js/popUp.js"></script>
+</head>
+<body class="fondo-blanco tipografia-monserrat">
+    <header class="header-fijo">
+        <button id="burger-menu" class="burger"></button>
+        <div class="background"></div>
+        <div class="menu">
+            <nav>
+                <a href="realizarContribucion.html">Realizar Contribución</a>
+                <a href="visualizacionAlertas.html">Visualización de Alertas</a> 
+                <a href="visualizacionReportes.html">Visualización de Reportes</a> 
+                <a href="reporteFallas.html">Reportes de Fallas</a> 
+                <a href="cargaArchivoCSV.html">Carga de CSV de Colaboraciones</a> 
+                <a href="pantallaPuntos.html">Canjeo de Puntos</a> 
+                <a href="registroDePersonasVulnerables.html">Registro de Personas Vulnerables</a> 
+                <a href="suscribirseAHeladera.html">Susribirse a Heladera</a> 
+            </nav>
+        </div>
+        <!-- <a href="menu.html" class="volver">Volver</a> -->
+        <h1 class="titulo" style="color: black !important;">Donar Oferta</h1>
+    </header>
+    
+    <main>
+        <form>        
+            <section class="flexContainer">
+                <div class="divContainer" style="width:98%">
+                    <input type="text" class="input" required placeholder=" Nombre de la Oferta" style="width:100%">
+                </div>
+            </section>
+
+            <section class="flexContainer">
+                <div class="divContainer" style="width:98%">
+                    <input type="text" class="input" required placeholder=" Puntos Necesarios para Acceder al Beneficio" style="width:100%">
+                </div>
+            </section>
+
+            <section class="flexContainer">
+                <div class="divContainer" style="width:98%">
+                    <input type="submit" class="input" required placeholder=" Imagen" style="width:100%">
+                </div>
+            </section>
+
+            <div class="centrar">
+                <input type="submit" value="Continuar" class="enviar" id="colaboracionExitosaBoton">
+            </div>
+        </form>
+    </main>
+
+</body>
+</html>

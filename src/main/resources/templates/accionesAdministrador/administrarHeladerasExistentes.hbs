@@ -1,0 +1,29 @@
+{{#partial "titulo-y-descripcion"}}
+    <title>Administrar Heladeras Existentes</title>
+    <meta name="description" content="Administrar Heladeras Existentes">
+{{/partial}}
+
+{{#partial "js-extra"}}
+    <script type="text/javascript" src="/js/gestionHeladeras.js"></script>
+{{/partial}}
+
+{{#partial "contenido"}}
+    <main>
+        <h1 class="titulo">Administrar Heladeras Existentes</h1> <br>
+        <section class="flexContainer">
+            <div class="divContainer" style="width:100%">
+                <label style="color: gray !important; font-size: large;">Heladera</label>
+                <select class="input" style="width:100%" required>
+                    {{#each heladeras}}
+                        <option>{{this.nombre}} - {{this.direccion.calle}} {{this.direccion.altura}} - {{this.id}}</option>
+                    {{/each}}
+                </select>
+                <br>
+                <br>
+                <input type="submit" value="Editar" class="boton-rojo" id="editarHeladeraBoton">
+                <input type="submit" value="Eliminar" class="boton-rojo" id="eliminarHeladeraBoton">
+            </div>
+        </section>
+    </main>
+{{/partial}}
+{{> templates/baseFondoBlancoSinMenu }}

@@ -1,0 +1,1934 @@
+@startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": false,
+    "cutInterfaceStructures": false,
+    "cutDataStructures": false,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 6,
+    "backwardDepth": 6,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "ar.edu.utn.frba.dds.controllers.colaboraciones.HacerCargoDeUnaHeladeraController",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_100278 { 
+   	label=edu
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_1878955145 { 
+   	label=utn
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   Alerta84527693[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Alerta</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   tipoDeAlerta: TipoAlerta [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >- encontrarTecnicoMasCercano(heladera: Heladera): Tecnico</TD></TR>
+<TR><TD ALIGN="LEFT" >+ notificarTecnico(incidente: Incidente)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Beneficio1764984089[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Beneficio</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   descripcion: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   nombre: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   rubro: Rubro [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   tipoDeBeneficio: TipoDeBeneficio [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Canje1229852772[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Canje</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   fecha: LocalDateTime [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   oferta: Oferta [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ puntos(): Double</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+CanjeRepository239864323[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)CanjeRepository</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ actualizar(canje: Canje)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarPorId(id: Long): Optional&lt;Canje&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarTodos(): List&lt;Canje&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminar(canje: Canje)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminarFisico(canje: Canje)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ guardar(canje: Canje)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Comida1432903888[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Comida</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   nombre: String [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Contrasenia571635564[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Contrasenia</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   contrasenia: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   fechaDeCreacionDeContrasenia: LocalDateTime [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Coordenada78453277[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Coordenada</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   latitud: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   longitud: String [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ builder(): CoordenadaBuilder</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Direccion78453277[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Direccion</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   altura: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   calle: Calle [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   codigoPostal: String [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ direccionCompleta(): String</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+DireccionRepository239864323[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)DireccionRepository</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ actualizar(direccion: Direccion)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarElementosPorStringCalleNumeroCP(calle: String, altura: String, codigoPostal: String): List&lt;Direccion&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarPorId(id: Long): Optional&lt;Direccion&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarTodos(): List&lt;Direccion&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminar(direccion: Direccion)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminarFisico(direccion: Direccion)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ guardar(direccion: Direccion)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+DistribucionDeViandaController1202599025[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)DistribucionDeViandaController</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   distribucionDeViandaRepository: DistribucionDeViandaRepository [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ create(context: Context)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ delete(context: Context)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ edit(context: Context)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ index(context: Context)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ save(context: Context)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ show(context: Context)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ update(context: Context)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+DistribucionDeViandaRepository239864323[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)DistribucionDeViandaRepository</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ actualizar(distribucionDeViandas: DistribucionDeViandas)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarPorId(id: Long): Optional&lt;DistribucionDeViandas&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarTodos(): List&lt;DistribucionDeViandas&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminar(distribucionDeViandas: DistribucionDeViandas)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminarFisico(distribucionDeViandas: DistribucionDeViandas)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ guardar(distribucionDeViandas: DistribucionDeViandas)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+DistribucionDeViandas501233310[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)DistribucionDeViandas</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   cantidadDeViandasAMover: Integer [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   colaborador: PersonaHumana [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   fechaDeColaboracion: LocalDate [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   heladeraDeDestino: Heladera [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   heladeraDeOrigen: Heladera [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   motivoDeLaDistribucion: MotivoDeLaDistribucion [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ builder(): DistribucionDeViandasBuilder</TD></TR>
+<TR><TD ALIGN="LEFT" >+ fechaEntre(inicio: LocalDateTime, fin: LocalDateTime): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ of(colaborador: PersonaHumana): DistribucionDeViandas</TD></TR>
+<TR><TD ALIGN="LEFT" >+ of(personaHumana: PersonaHumana, cantidad: Integer, fecha: LocalDate): DistribucionDeViandas</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Documento2042765656[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Documento</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   numeroDeDocumento: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   tipoDeDocumento: TipoDeDocumento [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ of(tipoDeDocumento: String): Documento</TD></TR>
+<TR><TD ALIGN="LEFT" >+ of(tipoDeDocumento: String, nroDocumento: String): Documento</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+DonacionDeDinero501233310[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)DonacionDeDinero</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   colaboradorHumano: PersonaHumana [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   colaboradorJuridico: PersonaJuridica [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   fechaDeColaboracion: LocalDate [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   frecuencia: FrecuenciaDeDonacionDeDinero [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   mercadoPagoId: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   monto: Double [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ builder(): DonacionDeDineroBuilder</TD></TR>
+<TR><TD ALIGN="LEFT" >+ of(personaHumana: PersonaHumana): DonacionDeDinero</TD></TR>
+<TR><TD ALIGN="LEFT" >+ of(personaJuridica: PersonaJuridica): DonacionDeDinero</TD></TR>
+<TR><TD ALIGN="LEFT" >+ of(personaHumana: PersonaHumana, monto: Double, fecha: LocalDate, frecuenciaDeDonacionDeDinero: FrecuenciaDeDonacionDeDinero): DonacionDeDinero</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+DonacionDeDineroController1202599025[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)DonacionDeDineroController</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   donacionDeDineroReporitory: DonacionDeDineroReporitory [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ create(context: Context)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ delete(context: Context)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ edit(context: Context)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ index(context: Context)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ save(context: Context)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ show(context: Context)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ update(context: Context)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+DonacionDeDineroReporitory239864323[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)DonacionDeDineroReporitory</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ actualizar(donacionDeDinero: DonacionDeDinero)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarPorId(id: Long): Optional&lt;DonacionDeDinero&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarTodos(): List&lt;DonacionDeDinero&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminar(donacionDeDinero: DonacionDeDinero)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminarFisico(donacionDeDinero: DonacionDeDinero)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ guardar(donacionDeDinero: DonacionDeDinero)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+DonacionDeOferta501233310[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)DonacionDeOferta</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   colaborador: PersonaJuridica [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   fechaDeColaboracion: LocalDate [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   oferta: Oferta [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+DonacionDeOfertaReporitory239864323[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)DonacionDeOfertaReporitory</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ actualizar(donacionDeOferta: DonacionDeOferta)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarPorId(id: Long): Optional&lt;DonacionDeOferta&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarTodos(): List&lt;DonacionDeOferta&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminar(donacionDeOferta: DonacionDeOferta)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminarFisico(donacionDeOferta: DonacionDeOferta)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ guardar(donacionDeOferta: DonacionDeOferta)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+DonacionDeVianda501233310[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)DonacionDeVianda</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   colaborador: PersonaHumana [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   fechaDeColaboracion: LocalDate [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   vianda: Vianda [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ fechaEntre(inicio: LocalDateTime, fin: LocalDateTime): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ of(colaborador: PersonaHumana, vianda: Vianda, fecha: LocalDate): DonacionDeVianda</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+DonacionDeViandaController1202599025[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)DonacionDeViandaController</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   donacionDeViandaRepository: DonacionDeViandaRepository [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ create(context: Context)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ delete(context: Context)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ edit(context: Context)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ index(context: Context)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ save(context: Context)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ show(context: Context)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ update(context: Context)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+DonacionDeViandaRepository239864323[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)DonacionDeViandaRepository</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ actualizar(donacionDeVianda: DonacionDeVianda)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarPorId(id: Long): Optional&lt;DonacionDeVianda&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarTodos(): List&lt;DonacionDeVianda&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminar(donacionDeVianda: DonacionDeVianda)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminarFisico(donacionDeVianda: DonacionDeVianda)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ guardar(donacionDeVianda: DonacionDeVianda)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+FallaTecnica84527693[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)FallaTecnica</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   foto: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   personaHumana: PersonaHumana [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >- encontrarTecnicoMasCercano(heladera: Heladera): Tecnico</TD></TR>
+<TR><TD ALIGN="LEFT" >+ fechaEntre(inicio: LocalDateTime, fin: LocalDateTime): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >- notificarTecnico(incidente: Incidente)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+FallaTecnicaFactory1437369759[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)FallaTecnicaFactory</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ create(descripcion: String, heladera: Heladera, personaHumana: PersonaHumana, foto: String): FallaTecnica</TD></TR>
+<TR><TD ALIGN="LEFT" >+ create(descripcion: String, heladera: Heladera, personaHumana: PersonaHumana): FallaTecnica</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Formulario1182271835[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Formulario</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   preguntas: List&lt;Pregunta&gt; [0..*]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+FormularioRepository239864323[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)FormularioRepository</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ actualizar(formulario: Formulario)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarPorId(id: Long): Optional&lt;Formulario&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarTodos(): List&lt;Formulario&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminar(formulario: Formulario)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminarFisico(formulario: Formulario)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ guardar(formulario: Formulario)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+FormularioRespondido1182271835[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)FormularioRespondido</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   formulario: Formulario [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   respuestasFormulario: List&lt;Respuesta&gt; [0..*]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+FormularioRespondidoRepository239864323[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)FormularioRespondidoRepository</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ actualizar(formularioRespondido: FormularioRespondido)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarPorId(id: Long): Optional&lt;FormularioRespondido&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarTodos(): List&lt;FormularioRespondido&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminar(formularioRespondido: FormularioRespondido)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminarFisico(formularioRespondido: FormularioRespondido)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ guardar(formularioRespondido: FormularioRespondido)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+HacerCargoDeUnaHeladeraController1202599025[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)HacerCargoDeUnaHeladeraController</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   repositorioDeHacerceCargoDeUnaHeladera: HacerseCargoDeUnaHeladeraRepository [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ create(context: Context)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ delete(context: Context)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ edit(context: Context)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ index(context: Context)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ save(context: Context)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ show(context: Context)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ update(context: Context)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+HacerseCargoDeUnaHeladera501233310[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)HacerseCargoDeUnaHeladera</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   colaborador: PersonaJuridica [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   fechaDeColaboracion: LocalDate [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   heladera: Heladera [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+HacerseCargoDeUnaHeladeraRepository239864323[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)HacerseCargoDeUnaHeladeraRepository</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ actualizar(hacerseCargoDeUnaHeladera: HacerseCargoDeUnaHeladera)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarPorId(id: Long): Optional&lt;HacerseCargoDeUnaHeladera&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarTodos(): List&lt;HacerseCargoDeUnaHeladera&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminar(hacerseCargoDeUnaHeladera: HacerseCargoDeUnaHeladera)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminarFisico(hacerseCargoDeUnaHeladera: HacerseCargoDeUnaHeladera)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ guardar(hacerseCargoDeUnaHeladera: HacerseCargoDeUnaHeladera)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Heladera754468373[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Heladera</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   capacidad: Integer [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   coordenada: Coordenada [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   descripcion: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   direccion: Direccion [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   estado: EstadoHeladera [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   estadoReparacion: EstadoReparacion [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   fallas: List&lt;FallaTecnica&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   historialDeTemperaturas: List&lt;TemperaturaEnCelcius&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   incidentes: List&lt;Incidente&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   intentosDeApertura: List&lt;IntentoApertura&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   modelo: ModeloHeladera [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   movimientoDeViandas: List&lt;MovimientoDeViandas&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   nombre: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   solicitudesDeAperturas: List&lt;SolicitudDeApertura&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   viandas: List&lt;Vianda&gt; [0..*]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ actualizarTemperaturaActual(temperatura: Double, fechaTemperatura: LocalDateTime)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ agregarIncidente(incidente: Incidente)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ agregarIntentoDeApertura(intento: IntentoApertura)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ agregarSolicitudDeApertura(solicitud: SolicitudDeApertura)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ agregarVianda(vianda: Vianda)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ builder(): HeladeraBuilder</TD></TR>
+<TR><TD ALIGN="LEFT" >+ cantidadDeIngresos(movimientos: List&lt;MovimientoDeViandas&gt;): Integer</TD></TR>
+<TR><TD ALIGN="LEFT" >+ cantidadDeRetiros(movimientos: List&lt;MovimientoDeViandas&gt;): Integer</TD></TR>
+<TR><TD ALIGN="LEFT" >+ capacidad(): Integer</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getFallasEntreFechas(inicio: LocalDateTime, fin: LocalDateTime): List&lt;FallaTecnica&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getMovimientoDeViandasEntreFechas(inicio: LocalDateTime, fin: LocalDateTime): List&lt;MovimientoDeViandas&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ reportarFallaTecnica(fallaTecnica: FallaTecnica)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+HeladeraRepository239864323[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)HeladeraRepository</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ actualizar(heladera: Heladera)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarElementosPorString(nombre: String): List&lt;Heladera&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarFallasEntreFechas(inicio: LocalDateTime, fin: LocalDateTime): List&lt;Heladera&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarMovimientosEntreFechas(inicio: LocalDateTime, fin: LocalDateTime): List&lt;Heladera&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarPorId(id: Long): Optional&lt;Heladera&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarTodos(): List&lt;Heladera&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminar(heladera: Heladera)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminarFisico(heladera: Heladera)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ guardar(heladera: Heladera)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Incidente84527693[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Incidente</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   descripcion: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   fechaHora: LocalDateTime [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   heladera: Heladera [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+IncidenteController799359457[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)IncidenteController</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   incidentesRepository: IncidentesRepository [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ create(context: Context)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ delete(context: Context)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ edit(context: Context)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ index(context: Context)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ save(context: Context)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ show(context: Context)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ update(context: Context)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+IncidentesRepository239864323[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)IncidentesRepository</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ actualizar(incidente: Incidente)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarPorId(id: Long): Optional&lt;Incidente&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarPorTipo(tipo: String): List&lt;Incidente&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarTodos(): List&lt;Incidente&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminar(incidente: Incidente)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminarFisico(incidente: Incidente)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ guardar(incidente: Incidente)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+IntentoApertura1751420509[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)IntentoApertura</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   cantidad: Integer [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   estado: Boolean [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   fechaHoraAlta: LocalDateTime [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   fechaHoraEjecucion: LocalDateTime [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   idHeladera: Long [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   idTarjeta: Integer [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   motivo: MotivoPermiso [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+IntentoDeAperturaRepository239864323[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)IntentoDeAperturaRepository</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ actualizar(intentoApertura: IntentoApertura)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarPorId(id: Long): Optional&lt;IntentoApertura&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarTodos(): List&lt;IntentoApertura&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminar(intentoApertura: IntentoApertura)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminarFisico(intentoApertura: IntentoApertura)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ guardar(intentoApertura: IntentoApertura)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+MedioDeContacto1052243338[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)MedioDeContacto</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   contacto: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   tipoDeMedioDeContacto: TipoDeMedioDeContacto [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ of(tipoContacto: String, contacto: String): MedioDeContacto</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+MedioDeContactoRepository239864323[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)MedioDeContactoRepository</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ actualizar(medioDeContacto: MedioDeContacto)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarPorId(id: Long): Optional&lt;MedioDeContacto&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarTodos(): List&lt;MedioDeContacto&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminar(medioDeContacto: MedioDeContacto)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminarFisico(medioDeContacto: MedioDeContacto)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ guardar(medioDeContacto: MedioDeContacto)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+MenoresACargoDePersonaEnSituacionVulnerable239279467[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)MenoresACargoDePersonaEnSituacionVulnerable</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   fechaDeNacimiento: LocalDateTime [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   nombreYApellido: NombreYApellido [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   relacionConPersonaEnSituacionVulnerable: String [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ builder(): MenoresACargoDePersonaEnSituacionVulnerableBuilder</TD></TR>
+<TR><TD ALIGN="LEFT" >+ esMenorDeEdad(): boolean</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+MenoresACargoDePersonaEnSituacionVulnerableRepository239864323[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)MenoresACargoDePersonaEnSituacionVulnerableRepository</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ actualizar(MenoresACargoDePersonaEnSituacionVulnerable: MenoresACargoDePersonaEnSituacionVulnerable)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarPorId(id: Long): Optional&lt;MenoresACargoDePersonaEnSituacionVulnerable&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarTodos(): List&lt;MenoresACargoDePersonaEnSituacionVulnerable&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminar(MenoresACargoDePersonaEnSituacionVulnerable: MenoresACargoDePersonaEnSituacionVulnerable)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminarFisico(MenoresACargoDePersonaEnSituacionVulnerable: MenoresACargoDePersonaEnSituacionVulnerable)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ guardar(MenoresACargoDePersonaEnSituacionVulnerable: MenoresACargoDePersonaEnSituacionVulnerable)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+ModeloHeladera136989785[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)ModeloHeladera</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   nombre: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   temperaturaMaxima: Float [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   temperaturaMinima: Float [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+ModeloHeladeraRepository239864323[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)ModeloHeladeraRepository</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ actualizar(modeloHeladera: ModeloHeladera)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarPorId(id: Long): Optional&lt;ModeloHeladera&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarTodos(): List&lt;ModeloHeladera&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminar(modeloHeladera: ModeloHeladera)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminarFisico(modeloHeladera: ModeloHeladera)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ guardar(modeloHeladera: ModeloHeladera)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+MovimientoDeViandaRepository239864323[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)MovimientoDeViandaRepository</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ actualizar(movimientoDeViandas: MovimientoDeViandas)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarPorId(id: Long): Optional&lt;MovimientoDeViandas&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarTodos(): List&lt;MovimientoDeViandas&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminar(movimientoDeViandas: MovimientoDeViandas)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminarFisico(movimientoDeViandas: MovimientoDeViandas)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ guardar(movimientoDeViandas: MovimientoDeViandas)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+MovimientoDeViandas136989785[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)MovimientoDeViandas</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   cantidadDeViandasAIngresar: Integer [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   cantidadDeViandasARetirar: Integer [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   descripcion: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   fecha: LocalDateTime [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ fechaEntre(inicio: LocalDateTime, fin: LocalDateTime): boolean</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+NombreYApellido1065030942[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)NombreYApellido</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   apellido: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   nombre: String [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ of(nombre: String, apellido: String): NombreYApellido</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Oferta1229852772[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Oferta</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   beneficio: Beneficio [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   imagenIlustrativa: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   nombre: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   puntosNecesariosParaAccederAlBeneficio: Double [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ cumpleConLosPuntosNecesarios(puntos: Double): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ rubro(): Rubro</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+OfertaRepository239864323[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)OfertaRepository</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ actualizar(oferta: Oferta)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarElementosPorString(nombre: String): List&lt;Oferta&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarPorId(id: Long): Optional&lt;Oferta&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarTodos(): List&lt;Oferta&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminar(oferta: Oferta)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminarFisico(oferta: Oferta)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ guardar(oferta: Oferta)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Opcion1182271835[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Opcion</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   esCorrecta: Boolean [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   valor: String [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+OpcionRepository239864323[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)OpcionRepository</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ actualizar(opcion: Opcion)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarPorId(id: Long): Optional&lt;Opcion&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarTodos(): List&lt;Opcion&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminar(opcion: Opcion)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminarFisico(opcion: Opcion)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ guardar(opcion: Opcion)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Persistente1065030942[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Persistente</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   creadoPor: Long [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   editadoPor: Long [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   eliminarPor: Long [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   estaActivo: Boolean [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   fechaBaja: LocalDateTime [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   fechaDeAlta: LocalDateTime [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   fechaUltimaModificacion: LocalDateTime [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   id: Long [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+PersonaEnSituacionVulnerable239279467[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)PersonaEnSituacionVulnerable</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   colaboradorQueLoRegistro: PersonaHumana [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   direccion: Direccion [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   documento: Documento [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   fechaDeNacimiento: LocalDate [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   menoresACargo: List&lt;MenoresACargoDePersonaEnSituacionVulnerable&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   nombreYApellido: NombreYApellido [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   tarjeta: TarjetaVulnerable [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ agregarMenor(menor: MenoresACargoDePersonaEnSituacionVulnerable)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ builder(): PersonaEnSituacionVulnerableBuilder</TD></TR>
+<TR><TD ALIGN="LEFT" >+ cantidadDeMenoresACargo(): Integer</TD></TR>
+<TR><TD ALIGN="LEFT" >+ usarTarjeta(heladera: Heladera, vianda: Vianda)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+PersonaHumanFactory1437369759[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)PersonaHumanFactory</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ create(nombre: String, apellido: String): PersonaHumana</TD></TR>
+<TR><TD ALIGN="LEFT" >+ create(nombreYApellido: NombreYApellido, contacto: MedioDeContacto, documento: Documento): PersonaHumana</TD></TR>
+<TR><TD ALIGN="LEFT" >+ create(nombreYApellido: NombreYApellido, contacto: MedioDeContacto, documento: Documento, fechaNacimiento: LocalDate): PersonaHumana</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+PersonaHumana1433588517[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)PersonaHumana</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   calculadorDePuntos: CalculadorDePuntos [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   canjes: List&lt;Canje&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   direccion: Direccion [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   distribucionesDeViandas: List&lt;DistribucionDeViandas&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   documento: Documento [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   donacionesDeDinero: List&lt;DonacionDeDinero&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   donacionesDeViandas: List&lt;DonacionDeVianda&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   fechaDeNacimiento: LocalDate [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   formularioRespondido: FormularioRespondido [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   mediosDeContactos: List&lt;MedioDeContacto&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   nombreYApellido: NombreYApellido [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   registrosDePersonasEnSituacionVulnerables: List&lt;RegistroDePersonasEnSituacionVulnerable&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   tarjetas: List&lt;TarjetaColaborador&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   usuario: Usuario [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ agregarDistribucionDeViandas(distribucion: DistribucionDeViandas)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ agregarDonacionDeDinero(donacion: DonacionDeDinero)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ agregarDonacionDeVianda(donacion: DonacionDeVianda)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ agregarRegistroDePersonasEnSituacionVulnerable(registro: RegistroDePersonasEnSituacionVulnerable)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ agregarTarjeta(tarjeta: TarjetaColaborador)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ aniadirMedioDeContacto(contacto: MedioDeContacto)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ builder(): PersonaHumanaBuilder</TD></TR>
+<TR><TD ALIGN="LEFT" >+ canjearPuntos(oferta: Oferta)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getDistribucionesDeViandasEntreFechas(inicio: LocalDateTime, fin: LocalDateTime): List&lt;DistribucionDeViandas&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getDonacionesDeViandasEntreFechas(inicio: LocalDateTime, fin: LocalDateTime): List&lt;DonacionDeVianda&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ obtenerMedioDeContactoPorTipo(tipo: TipoDeMedioDeContacto): MedioDeContacto</TD></TR>
+<TR><TD ALIGN="LEFT" >+ puntosObtenidos(): Double</TD></TR>
+<TR><TD ALIGN="LEFT" >+ puntosYaCanjeados(): Double</TD></TR>
+<TR><TD ALIGN="LEFT" >+ solicitarAperturaHeladera(idHeladera: Long, descripcion: String)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ tarjetasActivas(): List&lt;TarjetaColaborador&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ tieneUsuario(): boolean</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+PersonaHumanaController778904493[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)PersonaHumanaController</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   heladeraRepository: HeladeraRepository [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   repositorioDePersonasHumanas: PersonaHumanaRepository [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ create(context: Context)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ delete(context: Context)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ edit(context: Context)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ index(context: Context)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ reportarFalla(context: Context)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ save(context: Context)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ show(context: Context)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ suscripcionHeladera(context: Context)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ update(context: Context)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+PersonaHumanaRepository239864323[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)PersonaHumanaRepository</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ actualizar(personaHumana: PersonaHumana)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarDonacionYDistribucionDeViandasEntreFechas(inicio: LocalDateTime, fin: LocalDateTime): List&lt;PersonaHumana&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarElementosPorStringDocumento(documento: String): List&lt;PersonaHumana&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarElementosPorUsuario(user: Usuario): List&lt;PersonaHumana&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarPorId(id: Long): Optional&lt;PersonaHumana&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarTarjetaPorId(id: Integer): TarjetaColaborador</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarTodos(): List&lt;PersonaHumana&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminar(personaHumana: PersonaHumana)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminarFisico(personaHumana: PersonaHumana)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ guardar(personaHumana: PersonaHumana)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+PersonaJuridica1433588517[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)PersonaJuridica</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   direccion: Direccion [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   donacionesDeDinero: List&lt;DonacionDeDinero&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   donacionesDeOfertas: List&lt;DonacionDeOferta&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   formularioRespondido: FormularioRespondido [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   hacerseCargoDeHeladeras: List&lt;HacerseCargoDeUnaHeladera&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   medioDeContacto: List&lt;MedioDeContacto&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   razonSocial: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   rubro: Rubro [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   tipo: TipoDePersonaJuridica [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   usuario: Usuario [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ agregarDonacionDeDinero(donacionDeDinero: DonacionDeDinero)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ aniadirMedioDeContacto(contacto: MedioDeContacto)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ hacerDonacion(donacion: DonacionDeOferta)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ hacerseCargoDeUnaHeladera(contribucion: HacerseCargoDeUnaHeladera)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+PersonaJuridicaController778904493[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)PersonaJuridicaController</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   repositorioDePersonasJuridicas: PersonaJuridicaRepository [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ create(context: Context)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ delete(context: Context)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ edit(context: Context)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ index(context: Context)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ reportarFalla(context: Context)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ save(context: Context)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ show(context: Context)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ suscripcionHeladera(contex: Context)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ update(context: Context)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+PersonaJuridicaFactory1437369759[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)PersonaJuridicaFactory</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ create(razonSocial: String, tipo: TipoDePersonaJuridica, rubro: Rubro): PersonaJuridica</TD></TR>
+<TR><TD ALIGN="LEFT" >+ create(razonSocial: String, tipo: TipoDePersonaJuridica, rubro: Rubro, mediosDeContacto: List&lt;MedioDeContacto&gt;, formulario: FormularioRespondido, usuario: Usuario): PersonaJuridica</TD></TR>
+<TR><TD ALIGN="LEFT" >+ create(razonSocial: String, tipo: TipoDePersonaJuridica, rubro: Rubro, medioDeContacto: MedioDeContacto, formulario: FormularioRespondido, usuario: Usuario): PersonaJuridica</TD></TR>
+<TR><TD ALIGN="LEFT" >+ create(razonSocial: String, medioDeContacto: MedioDeContacto, direccion: Direccion): PersonaJuridica</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+PersonaJuridicaRepository239864323[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)PersonaJuridicaRepository</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ actualizar(personaJuridica: PersonaJuridica)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarElementosPorStringRazonSocial(razonSocial: String): List&lt;PersonaJuridica&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarElementosPorUsuario(user: Usuario): List&lt;PersonaJuridica&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarPorId(id: Long): Optional&lt;PersonaJuridica&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarTodos(): List&lt;PersonaJuridica&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminar(personaJuridica: PersonaJuridica)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminarFisico(personaJuridica: PersonaJuridica)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ guardar(personaJuridica: PersonaJuridica)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+PersonaVulnerableController778904493[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)PersonaVulnerableController</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   repositorioDePersonasVulnerable: PersonaVulnerableRepository [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ create(context: Context)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ delete(context: Context)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ edit(context: Context)</TD></TR>
+<TR><TD ALIGN="LEFT" ># generarPersonaVulnerableDesdeContexto(context: Context): PersonaEnSituacionVulnerable</TD></TR>
+<TR><TD ALIGN="LEFT" >+ index(context: Context)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ save(context: Context)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ show(context: Context)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ update(context: Context)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+PersonaVulnerableRepository239864323[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)PersonaVulnerableRepository</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ actualizar(personaEnSituacionVulnerableulnerable: PersonaEnSituacionVulnerable)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarElementosPorString(nombre: String): List&lt;PersonaEnSituacionVulnerable&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarPorId(id: Long): Optional&lt;PersonaEnSituacionVulnerable&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarTodos(): List&lt;PersonaEnSituacionVulnerable&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminar(personaEnSituacionVulnerableulnerable: PersonaEnSituacionVulnerable)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminarFisico(personaEnSituacionVulnerableulnerable: PersonaEnSituacionVulnerable)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ guardar(personaEnSituacionVulnerableulnerable: PersonaEnSituacionVulnerable)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Pregunta1182271835[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Pregunta</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   esObligatoria: Boolean [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   preguntaConcreta: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   tipo: TipoPregunta [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+PreguntaRepository239864323[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)PreguntaRepository</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ actualizar(pregunta: Pregunta)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarPorId(id: Long): Optional&lt;Pregunta&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarTodos(): List&lt;Pregunta&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminar(pregunta: Pregunta)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminarFisico(pregunta: Pregunta)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ guardar(pregunta: Pregunta)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+RegistroDePersonaVulnerableRepository239864323[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)RegistroDePersonaVulnerableRepository</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ actualizar(registroDePersonasEnSituacionVulnerable: RegistroDePersonasEnSituacionVulnerable)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarPorId(id: Long): Optional&lt;RegistroDePersonasEnSituacionVulnerable&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarTodos(): List&lt;RegistroDePersonasEnSituacionVulnerable&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminar(registroDePersonasEnSituacionVulnerable: RegistroDePersonasEnSituacionVulnerable)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminarFisico(registroDePersonasEnSituacionVulnerable: RegistroDePersonasEnSituacionVulnerable)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ guardar(registroDePersonasEnSituacionVulnerable: RegistroDePersonasEnSituacionVulnerable)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+RegistroDePersonasEnSituacionVulnerable501233310[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)RegistroDePersonasEnSituacionVulnerable</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   colaborador: PersonaHumana [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   fechaDeColaboracion: LocalDate [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   personaEnSituacionVulnerable: PersonaEnSituacionVulnerable [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   tarjeta: TarjetaVulnerable [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ of(colaborador: PersonaHumana): RegistroDePersonasEnSituacionVulnerable</TD></TR>
+<TR><TD ALIGN="LEFT" >+ of(colaborador: PersonaHumana, fechaDeColaboracion: LocalDate): RegistroDePersonasEnSituacionVulnerable</TD></TR>
+<TR><TD ALIGN="LEFT" >+ tieneRegistradoDomicilio(): boolean</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Respuesta1182271835[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Respuesta</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   opciones: List&lt;Opcion&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   pregunta: Pregunta [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+RespuestaRepository239864323[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)RespuestaRepository</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ actualizar(respuesta: Respuesta)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarPorId(id: Long): Optional&lt;Respuesta&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarTodos(): List&lt;Respuesta&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminar(respuesta: Respuesta)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminarFisico(respuesta: Respuesta)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ guardar(respuesta: Respuesta)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Rubro2035322775[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Rubro</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   descripcion: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   nombre: String [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+ServiceLocator603246036[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)ServiceLocator</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ instanceOf(componentClass: Class&lt;T&gt;): T</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+SolicitudDeApertura596201402[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)SolicitudDeApertura</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   descripcion: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   heladera: Heladera [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   horaDeRegistro: LocalDateTime [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   tarjeta: TarjetaColaborador [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   tiempoParaEjecucion: Integer [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+SolicitudDeAperturaRepository239864323[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)SolicitudDeAperturaRepository</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ actualizar(solicitudDeApertura: SolicitudDeApertura)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarPorId(id: Long): Optional&lt;SolicitudDeApertura&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarTodos(): List&lt;SolicitudDeApertura&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminar(solicitudDeApertura: SolicitudDeApertura)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminarFisico(solicitudDeApertura: SolicitudDeApertura)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ guardar(solicitudDeApertura: SolicitudDeApertura)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+TarjetaColaborador518110662[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)TarjetaColaborador</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   codigo: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   estaEnUso: Boolean [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   usos: List&lt;UsoTarjetaColaborador&gt; [0..*]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ activarTarjeta()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ desactivarTarjeta()</TD></TR>
+<TR><TD ALIGN="LEFT" ># puedeUsarTarjeta(solicitud: SolicitudDeApertura): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ ultimaHeladeraUsada(): Heladera</TD></TR>
+<TR><TD ALIGN="LEFT" >+ ultimaVezUtilizada(): LocalDateTime</TD></TR>
+<TR><TD ALIGN="LEFT" >+ usarTarjeta(heladera: Heladera, solicitud: SolicitudDeApertura)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+TarjetaColaboradorRepository239864323[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)TarjetaColaboradorRepository</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ actualizar(tarjetaColaborador: TarjetaColaborador)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarPorId(id: Long): Optional&lt;TarjetaColaborador&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarTodos(): List&lt;TarjetaColaborador&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminar(tarjetaColaborador: TarjetaColaborador)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminarFisico(tarjetaColaborador: TarjetaColaborador)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ guardar(tarjetaColaborador: TarjetaColaborador)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+TarjetaVulnerable518110662[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)TarjetaVulnerable</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   codigo: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   estaEnUso: Boolean [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   maximaCantidadDeUsosPermitidos: Integer [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   maximaCantidadDeUsosPorMenoresACargo: Integer [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   usoMaximo: Integer [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   usos: List&lt;UsoTarjetaVulnerable&gt; [0..*]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ comparacionDeFechas(fecha1: LocalDateTime, fecha2: LocalDateTime): Boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ puedeUsarTarjeta(): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ ultimaHeladeraUsada(): Heladera</TD></TR>
+<TR><TD ALIGN="LEFT" >+ ultimaVezUtilizada(): LocalDateTime</TD></TR>
+<TR><TD ALIGN="LEFT" >+ usarTarjeta(heladera: Heladera, vianda: Vianda)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+TarjetaVulnerableRepository239864323[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)TarjetaVulnerableRepository</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ actualizar(tarjetaVulnerable: TarjetaVulnerable)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarElementosPorStringCodigo(codigo: String): List&lt;TarjetaVulnerable&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarPorId(id: Long): Optional&lt;TarjetaVulnerable&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarTodos(): List&lt;TarjetaVulnerable&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminar(tarjetaVulnerable: TarjetaVulnerable)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminarFisico(tarjetaVulnerable: TarjetaVulnerable)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ guardar(tarjetaVulnerable: TarjetaVulnerable)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Tecnico417324378[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Tecnico</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   areaDeCobertura: UbicacionConRadio [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   cuil: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   documento: Documento [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   medioDeContacto: List&lt;MedioDeContacto&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   nombreYApellido: NombreYApellido [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   visitasRealizadas: List&lt;VisitaTecnico&gt; [0..*]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ agregarMedioDeContacto(medio: MedioDeContacto)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+TecnicoRepository239864323[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)TecnicoRepository</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ actualizar(tecnico: Tecnico)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarElementosPorString(cuil: String): List&lt;Tecnico&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarPorId(id: Long): Optional&lt;Tecnico&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarTodos(): List&lt;Tecnico&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminar(tecnico: Tecnico)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminarFisico(tecnico: Tecnico)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ guardar(tecnico: Tecnico)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+TemperaturaEnCelcius136989785[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)TemperaturaEnCelcius</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   fecha: LocalDateTime [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   valor: Double [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+TemperaturaEnCelciusRepository239864323[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)TemperaturaEnCelciusRepository</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ actualizar(temperaturaEnCelcius: TemperaturaEnCelcius)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarPorId(id: Long): Optional&lt;TemperaturaEnCelcius&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarTodos(): List&lt;TemperaturaEnCelcius&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminar(temperaturaEnCelcius: TemperaturaEnCelcius)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminarFisico(temperaturaEnCelcius: TemperaturaEnCelcius)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ guardar(temperaturaEnCelcius: TemperaturaEnCelcius)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+UbicacionConRadio78453277[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)UbicacionConRadio</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   coordenada: Coordenada [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   radio: Integer [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ latitud(): String</TD></TR>
+<TR><TD ALIGN="LEFT" >+ longitud(): String</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+UsoTarjetaColaborador657668150[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)UsoTarjetaColaborador</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   fecha: LocalDateTime [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   heladera: Heladera [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   solicitud: SolicitudDeApertura [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+UsoTarjetaColaboradorRepository239864323[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)UsoTarjetaColaboradorRepository</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ actualizar(usoTarjetaColaborador: UsoTarjetaColaborador)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarPorId(id: Long): Optional&lt;UsoTarjetaColaborador&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarTodos(): List&lt;UsoTarjetaColaborador&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminar(usoTarjetaColaborador: UsoTarjetaColaborador)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminarFisico(usoTarjetaColaborador: UsoTarjetaColaborador)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ guardar(usoTarjetaColaborador: UsoTarjetaColaborador)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+UsoTarjetaVulnerable657668150[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)UsoTarjetaVulnerable</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   fecha: LocalDateTime [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   heladera: Heladera [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   vianda: Vianda [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+UsoTarjetaVulnerableRepository239864323[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)UsoTarjetaVulnerableRepository</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ actualizar(usoTarjetaVulnerable: UsoTarjetaVulnerable)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarPorId(id: Long): Optional&lt;UsoTarjetaVulnerable&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarTodos(): List&lt;UsoTarjetaVulnerable&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminar(usoTarjetaVulnerable: UsoTarjetaVulnerable)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminarFisico(usoTarjetaVulnerable: UsoTarjetaVulnerable)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ guardar(usoTarjetaVulnerable: UsoTarjetaVulnerable)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Usuario571635564[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Usuario</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   contrasenia: Contrasenia [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   nombreDeUsuario: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   rol: RolDeUsuario [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ contraseniaCorrecta(contrasenia: String): boolean</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+UsuarioRepository239864323[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)UsuarioRepository</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ actualizar(usuario: Usuario)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarPorId(id: Long): Optional&lt;Usuario&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarPorString(nombre: String): List&lt;Usuario&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarTodos(): List&lt;Usuario&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminar(usuario: Usuario)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminarFisico(usuario: Usuario)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ guardar(usuario: Usuario)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Vianda1432903888[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Vianda</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   calorias: Integer [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   comida: Comida [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   estado: Estado [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   fechaDeCaducidad: LocalDateTime [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   fechaDeDonacion: LocalDateTime [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   heladeraEnLaQueSeEncuentra: Heladera [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   peso: Integer [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+ViandaRepository239864323[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)ViandaRepository</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ actualizar(vianda: Vianda)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarPorId(id: Long): Optional&lt;Vianda&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarTodos(): List&lt;Vianda&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminar(vianda: Vianda)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminarFisico(vianda: Vianda)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ guardar(vianda: Vianda)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+VisitaTecnico84527693[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)VisitaTecnico</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   comentario: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   fechaVisita: LocalDate [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   foto: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   incidente: Incidente [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   solucionado: Boolean [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   tecnico: Tecnico [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+VisitaTecnicoRepository239864323[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)VisitaTecnicoRepository</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ actualizar(visitaTecnico: VisitaTecnico)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarPorId(id: Long): Optional&lt;VisitaTecnico&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ buscarTodos(): List&lt;VisitaTecnico&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminar(visitaTecnico: VisitaTecnico)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ eliminarFisico(visitaTecnico: VisitaTecnico)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ guardar(visitaTecnico: VisitaTecnico)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+} 
+
+'edges    
+Canje1229852772 -> Oferta1229852772[label="oferta
+[0..1]"];
+DireccionRepository239864323 -> CanjeRepository239864323[arrowhead=none];
+DireccionRepository239864323 -> DistribucionDeViandaRepository239864323[arrowhead=none];
+DireccionRepository239864323 -> DonacionDeDineroReporitory239864323[arrowhead=none];
+DireccionRepository239864323 -> DonacionDeOfertaReporitory239864323[arrowhead=none];
+DireccionRepository239864323 -> DonacionDeViandaRepository239864323[arrowhead=none];
+DireccionRepository239864323 -> FormularioRepository239864323[arrowhead=none];
+DireccionRepository239864323 -> FormularioRespondidoRepository239864323[arrowhead=none];
+DireccionRepository239864323 -> HacerseCargoDeUnaHeladeraRepository239864323[arrowhead=none];
+DireccionRepository239864323 -> HeladeraRepository239864323[arrowhead=none];
+DireccionRepository239864323 -> IncidentesRepository239864323[arrowhead=none];
+DireccionRepository239864323 -> IntentoDeAperturaRepository239864323[arrowhead=none];
+DireccionRepository239864323 -> MedioDeContactoRepository239864323[arrowhead=none];
+DireccionRepository239864323 -> MenoresACargoDePersonaEnSituacionVulnerableRepository239864323[arrowhead=none];
+DireccionRepository239864323 -> ModeloHeladeraRepository239864323[arrowhead=none];
+DireccionRepository239864323 -> MovimientoDeViandaRepository239864323[arrowhead=none];
+DireccionRepository239864323 -> OfertaRepository239864323[arrowhead=none];
+DireccionRepository239864323 -> OpcionRepository239864323[arrowhead=none];
+DireccionRepository239864323 -> PersonaHumanaRepository239864323[arrowhead=none];
+DireccionRepository239864323 -> PersonaJuridicaRepository239864323[arrowhead=none];
+DireccionRepository239864323 -> PersonaVulnerableRepository239864323[arrowhead=none];
+DireccionRepository239864323 -> PreguntaRepository239864323[arrowhead=none];
+DireccionRepository239864323 -> RegistroDePersonaVulnerableRepository239864323[arrowhead=none];
+DireccionRepository239864323 -> RespuestaRepository239864323[arrowhead=none];
+DireccionRepository239864323 -> SolicitudDeAperturaRepository239864323[arrowhead=none];
+DireccionRepository239864323 -> TarjetaColaboradorRepository239864323[arrowhead=none];
+DireccionRepository239864323 -> TarjetaVulnerableRepository239864323[arrowhead=none];
+DireccionRepository239864323 -> TecnicoRepository239864323[arrowhead=none];
+DireccionRepository239864323 -> TemperaturaEnCelciusRepository239864323[arrowhead=none];
+DireccionRepository239864323 -> UsoTarjetaColaboradorRepository239864323[arrowhead=none];
+DireccionRepository239864323 -> UsoTarjetaVulnerableRepository239864323[arrowhead=none];
+DireccionRepository239864323 -> UsuarioRepository239864323[arrowhead=none];
+DireccionRepository239864323 -> ViandaRepository239864323[arrowhead=none];
+DireccionRepository239864323 -> VisitaTecnicoRepository239864323[arrowhead=none];
+DistribucionDeViandaController1202599025 -> DistribucionDeViandaRepository239864323[label="distribucionDeViandaRepository
+[0..1]"];
+DistribucionDeViandaController1202599025 -> DistribucionDeViandas501233310[label="save() -> builder()"];
+DistribucionDeViandas501233310 -> Heladera754468373[label="heladeraDeDestino
+[0..1]"];
+DistribucionDeViandas501233310 -> Heladera754468373[label="heladeraDeOrigen
+[0..1]"];
+DistribucionDeViandas501233310 -> PersonaHumana1433588517[label="colaborador
+[0..1]"];
+DonacionDeDineroController1202599025 -> DonacionDeDineroReporitory239864323[label="donacionDeDineroReporitory
+[0..1]"];
+DonacionDeDineroController1202599025 -> PersonaHumanaRepository239864323[label="save() -> buscarPorId()"];
+DonacionDeDineroController1202599025 -> PersonaJuridicaRepository239864323[label="save() -> buscarPorId()"];
+DonacionDeOferta501233310 -> Oferta1229852772[label="oferta
+[0..1]"];
+DonacionDeOferta501233310 -> PersonaJuridica1433588517[label="colaborador
+[0..1]"];
+DonacionDeVianda501233310 -> PersonaHumana1433588517[label="colaborador
+[0..1]"];
+DonacionDeVianda501233310 -> Vianda1432903888[label="vianda
+[0..1]"];
+DonacionDeViandaController1202599025 -> DonacionDeViandaRepository239864323[label="donacionDeViandaRepository
+[0..1]"];
+DonacionDeViandaController1202599025 -> PersonaHumanaRepository239864323[label="save() -> buscarPorId()"];
+FallaTecnica84527693 -> PersonaHumana1433588517[label="personaHumana
+[0..1]"];
+Formulario1182271835 -> Pregunta1182271835[label="preguntas
+[0..*]"];
+HacerCargoDeUnaHeladeraController1202599025 -> DireccionRepository239864323[label="save() -> buscarElementosPorStringCalleNumeroCP()"];
+HacerCargoDeUnaHeladeraController1202599025 -> DistribucionDeViandaController1202599025[arrowhead=none];
+HacerCargoDeUnaHeladeraController1202599025 -> DonacionDeDineroController1202599025[arrowhead=none];
+HacerCargoDeUnaHeladeraController1202599025 -> DonacionDeViandaController1202599025[arrowhead=none];
+HacerCargoDeUnaHeladeraController1202599025 -> HacerseCargoDeUnaHeladeraRepository239864323[label="repositorioDeHacerceCargoDeUnaHeladera
+[0..1]"];
+HacerCargoDeUnaHeladeraController1202599025 -> Heladera754468373[label="save() -> builder()"];
+HacerCargoDeUnaHeladeraController1202599025 -> IncidenteController799359457[arrowhead=none];
+HacerCargoDeUnaHeladeraController1202599025 -> ModeloHeladeraRepository239864323[label="save() -> buscarPorId()"];
+HacerCargoDeUnaHeladeraController1202599025 -> PersonaHumanaController778904493[arrowhead=none];
+HacerCargoDeUnaHeladeraController1202599025 -> PersonaJuridicaController778904493[arrowhead=none];
+HacerCargoDeUnaHeladeraController1202599025 -> PersonaJuridicaRepository239864323[label="save() -> buscarPorId()"];
+HacerCargoDeUnaHeladeraController1202599025 -> PersonaVulnerableController778904493[arrowhead=none];
+Heladera754468373 -> Coordenada78453277[label="coordenada
+[0..1]"];
+Heladera754468373 -> Direccion78453277[label="direccion
+[0..1]"];
+Heladera754468373 -> FallaTecnica84527693[label="fallas
+[0..*]"];
+Heladera754468373 -> HeladeraRepository239864323[label="agregarIntentoDeApertura() -> buscarPorId()"];
+Heladera754468373 -> Incidente84527693[label="incidentes
+[0..*]"];
+Heladera754468373 -> IntentoApertura1751420509[label="intentosDeApertura
+[0..*]"];
+Heladera754468373 -> ModeloHeladera136989785[label="modelo
+[0..1]"];
+Heladera754468373 -> MovimientoDeViandas136989785[label="movimientoDeViandas
+[0..*]"];
+Heladera754468373 -> PersonaHumanaRepository239864323[label="agregarIntentoDeApertura() -> buscarTarjetaPorId()"];
+Heladera754468373 -> ServiceLocator603246036[label="agregarIntentoDeApertura() -> instanceOf()"];
+Heladera754468373 -> SolicitudDeApertura596201402[label="solicitudesDeAperturas
+[0..*]"];
+Heladera754468373 -> TarjetaColaborador518110662[label="agregarIntentoDeApertura() -> usarTarjeta()"];
+Heladera754468373 -> TemperaturaEnCelcius136989785[label="historialDeTemperaturas
+[0..*]"];
+Heladera754468373 -> Vianda1432903888[label="viandas
+[0..*]"];
+Incidente84527693 -> Alerta84527693[arrowhead=none, arrowtail=empty, dir=both];
+Incidente84527693 -> FallaTecnica84527693[arrowhead=none, arrowtail=empty, dir=both];
+Incidente84527693 -> Heladera754468373[label="heladera
+[0..1]"];
+IncidenteController799359457 -> IncidentesRepository239864323[label="incidentesRepository
+[0..1]"];
+Oferta1229852772 -> Beneficio1764984089[label="beneficio
+[0..1]"];
+Persistente1065030942 -> Canje1229852772[arrowhead=none, arrowtail=empty, dir=both];
+Persistente1065030942 -> Direccion78453277[arrowhead=none, arrowtail=empty, dir=both];
+Persistente1065030942 -> DistribucionDeViandas501233310[arrowhead=none, arrowtail=empty, dir=both];
+Persistente1065030942 -> DonacionDeDinero501233310[arrowhead=none, arrowtail=empty, dir=both];
+Persistente1065030942 -> DonacionDeOferta501233310[arrowhead=none, arrowtail=empty, dir=both];
+Persistente1065030942 -> DonacionDeVianda501233310[arrowhead=none, arrowtail=empty, dir=both];
+Persistente1065030942 -> Formulario1182271835[arrowhead=none, arrowtail=empty, dir=both];
+Persistente1065030942 -> FormularioRespondido1182271835[arrowhead=none, arrowtail=empty, dir=both];
+Persistente1065030942 -> HacerseCargoDeUnaHeladera501233310[arrowhead=none, arrowtail=empty, dir=both];
+Persistente1065030942 -> Heladera754468373[arrowhead=none, arrowtail=empty, dir=both];
+Persistente1065030942 -> Incidente84527693[arrowhead=none, arrowtail=empty, dir=both];
+Persistente1065030942 -> IntentoApertura1751420509[arrowhead=none, arrowtail=empty, dir=both];
+Persistente1065030942 -> MedioDeContacto1052243338[arrowhead=none, arrowtail=empty, dir=both];
+Persistente1065030942 -> MenoresACargoDePersonaEnSituacionVulnerable239279467[arrowhead=none, arrowtail=empty, dir=both];
+Persistente1065030942 -> ModeloHeladera136989785[arrowhead=none, arrowtail=empty, dir=both];
+Persistente1065030942 -> MovimientoDeViandas136989785[arrowhead=none, arrowtail=empty, dir=both];
+Persistente1065030942 -> Oferta1229852772[arrowhead=none, arrowtail=empty, dir=both];
+Persistente1065030942 -> Opcion1182271835[arrowhead=none, arrowtail=empty, dir=both];
+Persistente1065030942 -> PersonaEnSituacionVulnerable239279467[arrowhead=none, arrowtail=empty, dir=both];
+Persistente1065030942 -> PersonaHumana1433588517[arrowhead=none, arrowtail=empty, dir=both];
+Persistente1065030942 -> PersonaJuridica1433588517[arrowhead=none, arrowtail=empty, dir=both];
+Persistente1065030942 -> Pregunta1182271835[arrowhead=none, arrowtail=empty, dir=both];
+Persistente1065030942 -> RegistroDePersonasEnSituacionVulnerable501233310[arrowhead=none, arrowtail=empty, dir=both];
+Persistente1065030942 -> Respuesta1182271835[arrowhead=none, arrowtail=empty, dir=both];
+Persistente1065030942 -> SolicitudDeApertura596201402[arrowhead=none, arrowtail=empty, dir=both];
+Persistente1065030942 -> TarjetaColaborador518110662[arrowhead=none, arrowtail=empty, dir=both];
+Persistente1065030942 -> TarjetaVulnerable518110662[arrowhead=none, arrowtail=empty, dir=both];
+Persistente1065030942 -> Tecnico417324378[arrowhead=none, arrowtail=empty, dir=both];
+Persistente1065030942 -> TemperaturaEnCelcius136989785[arrowhead=none, arrowtail=empty, dir=both];
+Persistente1065030942 -> UsoTarjetaColaborador657668150[arrowhead=none, arrowtail=empty, dir=both];
+Persistente1065030942 -> UsoTarjetaVulnerable657668150[arrowhead=none, arrowtail=empty, dir=both];
+Persistente1065030942 -> Usuario571635564[arrowhead=none, arrowtail=empty, dir=both];
+Persistente1065030942 -> Vianda1432903888[arrowhead=none, arrowtail=empty, dir=both];
+Persistente1065030942 -> VisitaTecnico84527693[arrowhead=none, arrowtail=empty, dir=both];
+PersonaEnSituacionVulnerable239279467 -> Direccion78453277[label="direccion
+[0..1]"];
+PersonaEnSituacionVulnerable239279467 -> Documento2042765656[label="documento
+[0..1]"];
+PersonaEnSituacionVulnerable239279467 -> MenoresACargoDePersonaEnSituacionVulnerable239279467[label="menoresACargo
+[0..*]"];
+PersonaEnSituacionVulnerable239279467 -> NombreYApellido1065030942[label="nombreYApellido
+[0..1]"];
+PersonaEnSituacionVulnerable239279467 -> PersonaHumana1433588517[label="colaboradorQueLoRegistro
+[0..1]"];
+PersonaEnSituacionVulnerable239279467 -> TarjetaVulnerable518110662[label="tarjeta
+[0..1]"];
+PersonaHumanFactory1437369759 -> NombreYApellido1065030942[label="create() -> of()"];
+PersonaHumanFactory1437369759 -> PersonaHumana1433588517[label="create() -> aniadirMedioDeContacto()"];
+PersonaHumanaController778904493 -> Heladera754468373[label="reportarFalla() -> reportarFallaTecnica()"];
+PersonaHumanaController778904493 -> HeladeraRepository239864323[label="heladeraRepository
+[0..1]"];
+PersonaHumanaController778904493 -> NombreYApellido1065030942[label="save() -> of()"];
+PersonaHumanaController778904493 -> PersonaHumanFactory1437369759[label="save() -> create()"];
+PersonaHumanaController778904493 -> PersonaHumanaRepository239864323[label="repositorioDePersonasHumanas
+[0..1]"];
+PersonaJuridica1433588517 -> Direccion78453277[label="direccion
+[0..1]"];
+PersonaJuridica1433588517 -> DonacionDeDinero501233310[label="donacionesDeDinero
+[0..*]"];
+PersonaJuridica1433588517 -> DonacionDeOferta501233310[label="donacionesDeOfertas
+[0..*]"];
+PersonaJuridica1433588517 -> FormularioRespondido1182271835[label="formularioRespondido
+[0..1]"];
+PersonaJuridica1433588517 -> HacerseCargoDeUnaHeladera501233310[label="hacerseCargoDeHeladeras
+[0..*]"];
+PersonaJuridica1433588517 -> MedioDeContacto1052243338[label="medioDeContacto
+[0..*]"];
+PersonaJuridica1433588517 -> Rubro2035322775[label="rubro
+[0..1]"];
+PersonaJuridica1433588517 -> Usuario571635564[label="usuario
+[0..1]"];
+PersonaJuridicaController778904493 -> PersonaJuridicaFactory1437369759[label="save() -> create()"];
+PersonaJuridicaController778904493 -> PersonaJuridicaRepository239864323[label="repositorioDePersonasJuridicas
+[0..1]"];
+PersonaJuridicaFactory1437369759 -> PersonaJuridica1433588517[label="create() -> aniadirMedioDeContacto()"];
+PersonaVulnerableController778904493 -> DireccionRepository239864323[label="generarPersonaVulnerableDesdeContexto() -> buscarElementosPorStringCalleNumeroCP()"];
+PersonaVulnerableController778904493 -> Documento2042765656[label="generarPersonaVulnerableDesdeContexto() -> of()"];
+PersonaVulnerableController778904493 -> NombreYApellido1065030942[label="generarPersonaVulnerableDesdeContexto() -> of()"];
+PersonaVulnerableController778904493 -> PersonaEnSituacionVulnerable239279467[label="generarPersonaVulnerableDesdeContexto() -> builder()"];
+PersonaVulnerableController778904493 -> PersonaHumanaRepository239864323[label="generarPersonaVulnerableDesdeContexto() -> buscarPorId()"];
+PersonaVulnerableController778904493 -> PersonaVulnerableRepository239864323[label="repositorioDePersonasVulnerable
+[0..1]"];
+PersonaVulnerableController778904493 -> TarjetaVulnerableRepository239864323[label="generarPersonaVulnerableDesdeContexto() -> buscarElementosPorStringCodigo()"];
+RegistroDePersonasEnSituacionVulnerable501233310 -> PersonaEnSituacionVulnerable239279467[label="personaEnSituacionVulnerable
+[0..1]"];
+RegistroDePersonasEnSituacionVulnerable501233310 -> PersonaHumana1433588517[label="colaborador
+[0..1]"];
+RegistroDePersonasEnSituacionVulnerable501233310 -> TarjetaVulnerable518110662[label="tarjeta
+[0..1]"];
+Respuesta1182271835 -> Opcion1182271835[label="opciones
+[0..*]"];
+Respuesta1182271835 -> Pregunta1182271835[label="pregunta
+[0..1]"];
+SolicitudDeApertura596201402 -> Heladera754468373[label="heladera
+[0..1]"];
+SolicitudDeApertura596201402 -> TarjetaColaborador518110662[label="tarjeta
+[0..1]"];
+TarjetaColaborador518110662 -> UsoTarjetaColaborador657668150[label="usos
+[0..*]"];
+TarjetaVulnerable518110662 -> UsoTarjetaVulnerable657668150[label="usos
+[0..*]"];
+Tecnico417324378 -> Documento2042765656[label="documento
+[0..1]"];
+Tecnico417324378 -> MedioDeContacto1052243338[label="medioDeContacto
+[0..*]"];
+Tecnico417324378 -> NombreYApellido1065030942[label="nombreYApellido
+[0..1]"];
+Tecnico417324378 -> UbicacionConRadio78453277[label="areaDeCobertura
+[0..1]"];
+Tecnico417324378 -> VisitaTecnico84527693[label="visitasRealizadas
+[0..*]"];
+UsoTarjetaColaborador657668150 -> Heladera754468373[label="heladera
+[0..1]"];
+UsoTarjetaColaborador657668150 -> SolicitudDeApertura596201402[label="solicitud
+[0..1]"];
+Usuario571635564 -> Contrasenia571635564[label="contrasenia
+[0..1]"];
+Vianda1432903888 -> Comida1432903888[label="comida
+[0..1]"];
+Vianda1432903888 -> Heladera754468373[label="heladeraEnLaQueSeEncuentra
+[0..1]"];
+VisitaTecnico84527693 -> Incidente84527693[label="incidente
+[0..1]"];
+VisitaTecnico84527693 -> Tecnico417324378[label="tecnico
+[0..1]"];
+    
+}
+@enduml

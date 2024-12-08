@@ -1,0 +1,44 @@
+{{#partial "titulo-y-descripcion"}}
+    <title>Canjes realizados</title>
+    <meta name="description" content="Canjes realizados">
+{{/partial}}
+
+{{#partial "css-extra"}}
+    <link rel="stylesheet" type="text/css" href="../css/canjesRealizados.css">
+{{/partial}}
+
+{{#partial "titulo-h1"}}
+    <h1 class="titulo" style="color: black !important;">Canjes realizados</h1>
+{{/partial}}
+
+{{#partial "js-extra"}}
+    <script src="/js/canjesRealizados.js"></script>
+
+{{/partial}}
+
+{{#partial "contenido"}}
+    <main>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Nombre de la Oferta</th>
+                    <th>Puntos Necesarios</th>
+                    <th>Beneficio</th>
+                    <th>Fecha de Canje</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each canjes}}
+                    <tr>
+                        <td>{{oferta.nombre}}</td>
+                        <td>{{oferta.puntosNecesariosParaAccederAlBeneficio}}</td>
+                        <td>{{oferta.beneficio.descripcion}}</td>
+                        <td>{{fecha}}</td>
+                    </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </main>
+{{/partial}}
+
+{{> templates/baseFondoBlanco }}

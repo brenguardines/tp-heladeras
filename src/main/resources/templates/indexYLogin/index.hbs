@@ -1,0 +1,30 @@
+{{#partial "titulo-y-descripcion"}}
+    <title>Inicio</title>
+    <meta name="description" content="Inicio">
+{{/partial}}
+
+{{#partial "js-extra"}}
+    <script type="text/javascript" src="/js/index.js"></script>
+{{/partial}}
+
+{{#partial "contenido"}}
+    <main class="centrar-en-pagina fondo-blanco">
+        <h1 class="titulo" style="color: black !important;">Sistema para la Mejora del Acceso Alimentario en Contextos de Vulnerabilidad Socioeconómica</h1>
+        <div class="contenedor-flex inverso">
+            <!-- Texto informativo a la izquierda -->
+            <div class="texto-informativo" style="color: black !important;">
+                <h5><strong>Trabajamos con un firme compromiso de mejorar el acceso a los alimentos para personas en situación de vulnerabilidad alimentaria. Inspirados por el espíritu solidario de nuestra comunidad, hemos implementado una red de heladeras solidarias distribuidas estratégicamente a lo largo y ancho del país. Estas heladeras se encuentran en lugares de fácil acceso, como restaurantes, estaciones de transporte público y otros establecimientos, facilitando tanto a quienes necesitan alimentos como a aquellos que desean colaborar con esta causa.</strong></h5>
+                <br>
+                <h5><strong>Te invitamos a iniciar sesión o registrarte para sumarte a esta iniciativa y colaborar con nuestra misión de generar un impacto positivo en la comunidad.</strong></h5>
+                <br>
+                <button class="boton-rojo" id="empezarIndex">Empezar</button>
+            </div>
+
+            <!-- Imagen de la heladera a la derecha -->
+            <div class="imagen-heladera">
+                <img src="../img/heladera.png" alt="Heladera solidaria" style="width: 100%;">
+            </div>
+        </div>
+    </main>in>
+{{/partial}}
+{{> templates/baseFondoBlancoSinMenu }}

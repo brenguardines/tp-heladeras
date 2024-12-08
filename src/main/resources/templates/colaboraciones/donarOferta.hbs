@@ -1,0 +1,36 @@
+{{#partial "titulo-y-descripcion"}}
+    <title>Donar Oferta</title>
+    <meta name="description" content="Donar Oferta">
+{{/partial}}
+
+{{#partial "js-extra"}}
+    <script type="text/javascript" src="/js/popUp.js"></script>
+{{/partial}}
+
+{{#partial "titulo-h1"}}
+    <h1 class="titulo" style="color: black !important;">Donar Oferta</h1>
+{{/partial}}
+
+{{#partial "contenido"}}
+    <main>
+        <form method="POST" action="/colaboraciones/donarOferta">
+            <section class="flexContainer">
+                <div class="divContainer" style="width:98%">
+                    <input type="text" name="nombreOferta" class="input" required placeholder="Nombre de la Oferta" style="width:100%">
+                </div>
+            </section>
+
+            <section class="flexContainer">
+                <div class="divContainer" style="width:98%">
+                    <input type="number" name="puntosNecesarios" class="input" required placeholder="Puntos Necesarios para Acceder al Beneficio" style="width:100%">
+                </div>
+            </section>
+
+            <div class="centrar">
+                <input type="submit" value="Continuar" class="enviar" id="colaboracionExitosaBoton">
+            </div>
+        </form>
+
+    </main>
+{{/partial}}
+{{> templates/baseFondoBlanco }}

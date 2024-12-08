@@ -1,0 +1,95 @@
+{{#partial "titulo-y-descripcion"}}
+    <title>Edición Persona Humana</title>
+    <meta name="description" content="Edición Persona Humana">
+{{/partial}}
+
+{{#partial "css-extra"}}
+    <link rel="stylesheet" type="text/css" href="../css/registroPersonaHumana.css">
+{{/partial}}
+
+{{#partial "titulo-h1"}}
+    <h1 class="titulo" style="color: black !important;">Vamos a conocernos <br> poco más</h1>
+{{/partial}}
+
+{{#partial "js-extra"}}
+    <script type="text/javascript" src="/js/registroPersonaHumana.js"></script>
+    <script type="text/javascript" src="/js/cargarImagen.js"></script>
+{{/partial}}
+
+{{#partial "contenido"}}
+    <main>
+        <form method="POST" action="/edicionPersonaHumana">
+            <section class="flexContainer">
+                <div class="divContainer" style="width:50%">
+                    <input type="text" name="nombre" class="input" required placeholder=" Nombre: {{nombre}}" style="width:100%" value="{{nombre}}">
+                </div>
+                <div class="divContainer" style="width:50%">
+                    <input type="text" name="apellido" class="input" required placeholder=" Apellido: {{nombre}}" style="width:100%" value="{{apellido}}">
+                </div>
+            </section>
+
+            <section class="flexContainer">
+                <div class="divContainer" style="width:20%">
+                    <label style="color: gray !important; font-size: large;">Documento</label>
+                    <select class="input" style="width:100%" name="tipoDocumento" required>
+                        <option value="">Tipo</option>
+                        <option value="DNI" {{#if tipoDocumento "==" "DNI"}}selected{{/if}}>DNI</option>
+                        <option value="LC" {{#if tipoDocumento "==" "LC"}}selected{{/if}}>LC</option>
+                        <option value="LE" {{#if tipoDocumento "==" "LE"}}selected{{/if}}>LE</option>
+                        <option value="PASAPORTE" {{#if tipoDocumento "==" "PASAPORTE"}}selected{{/if}}>PASAPORTE</option>
+                    </select>
+                </div>
+                <div class="divContainer" style="width:80%">
+                    <label style="font-size: large;">Numero</label>
+                    <input type="number" class="input" required placeholder=" Número: {{numeroDeDocumento}}" style="width:100%" name="numeroDeDocumento" value="{{numeroDeDocumento}}">
+                </div>
+            </section>
+
+            <section class="flexContainer">
+                <div class="divContainer" style="width:100%; position: relative;">
+                    <label style="color: gray !important; font-size: large;">Fecha de Nacimiento</label><br>
+                    <input type="date" class="input" name="fechaDeNacimiento" required value="{{fechaDeNacimiento}}">
+                    <img src="../img/Calendar.svg" alt="icono-calendario" class="calendar-icon">
+                </div>
+            </section>
+
+            <section class="flexContainer">
+                <div class="divContainer" style="width:20%">
+                    <label style="color: gray !important; font-size: large;">Medio de Contacto</label>
+                    <select class="input" style="width:100%" name="tipoMedioDeContacto" id="tipoContacto" required>
+                        <option value="">Tipo</option>
+                        <option value="NUMERO_DE_TELEFONO" {{#if tipoMedioDeContacto "==" "NUMERO_DE_TELEFONO"}}selected{{/if}}>Telefono</option>
+                        <option value="WHATSAPP" {{#if tipoMedioDeContacto "==" "WHATSAPP"}}selected{{/if}}>Whatsapp</option>
+                        <option value="TELEGRAM" {{#if tipoMedioDeContacto "==" "TELEGRAM"}}selected{{/if}}>Telegram</option>
+                        <option value="CORREO" {{#if tipoMedioDeContacto "==" "CORREO"}}selected{{/if}}>Correo</option>
+                    </select>
+                </div>
+                <div class="divContainer" style="width:80%">
+                    <label style="font-size: large;">Contacto</label>
+                    <input type="text" name="contacto" class="input" required placeholder=" Contacto: {{contacto}}" style="width:100%" id="contacto" value="{{contacto}}">
+                </div>
+            </section>
+
+            <section class="flexContainer">
+                <div class="divContainer" style="width:33%">
+                    <label style="color: gray !important; font-size: large;">Domicilio</label>
+                    <input type="text" class="input" name="calle" id="calle" placeholder=" Calle: {{calle}}" style="width:100%" value="{{calle}}">
+                </div>
+                <div class="divContainer" style="width:33%">
+                    <label style="font-size: large;">Altura</label>
+                    <input type="number" class="input" name="altura" id="altura" placeholder=" Altura: {{altura}}" style="width:100%" value="{{altura}}">
+                </div>
+                <div class="divContainer" style="width:33%">
+                    <label style="font-size: large;">Codigo Postal</label>
+                    <input type="number" class="input" name="codigoPostal" id="codigoPostal" placeholder=" Código Postal: {{codigoPostal}}" style="width:100%" value="{{codigoPostal}}">
+                </div>
+            </section>
+
+            <div class="centrar">
+                <input type="submit" value="Guardar Cambios" class="enviar" id="editarUsuarioBoton">
+            </div>
+        </form>
+    </main>
+{{/partial}}
+
+{{> templates/baseFondoBlanco }}

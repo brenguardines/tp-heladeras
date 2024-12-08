@@ -1,0 +1,67 @@
+{{#partial "titulo-y-descripcion"}}
+    <title>Donar Dinero</title>
+    <meta name="description" content="Donar Dinero">
+{{/partial}}
+
+{{#partial "css-extra"}}
+    <link rel="stylesheet" type="text/css" href="../css/donarDinero.css">
+{{/partial}}
+
+{{#partial "js-extra"}}
+    <!--<script type="text/javascript" src="/js/popUp.js"></script>-->
+   <!-- <script type="text/javascript" src="/js/datosDeTarjeta.js"></script>-->
+    <script type="text/javascript" src="/js/donarDinero.js"></script>
+{{/partial}}
+
+{{#partial "titulo-h1"}}
+    <h1 class="titulo" style="color: black !important;">Donar Dinero</h1>
+{{/partial}}
+
+{{#partial "contenido"}}
+    <main>
+        <form method="POST" action="/colaboraciones/donarDinero">
+            <section class="flexContainer" style="color: black">
+                <div id="montos">
+                    <label style="color: gray !important; font-size: large;">Selecciona un monto o ingresa uno personalizado:</label><br>
+                    <!-- Botones de montos preestablecidos -->
+                    <label class="input" style="padding:20px">
+                        <input type="radio" name="monto" value="2000" class="radioMonto" required> $2.000.-
+                    </label>
+                    <label class="input" style="padding:20px">
+                        <input type="radio" name="monto" value="5000" class="radioMonto"> $5.000.-
+                    </label>
+                    <label class="input" style="padding:20px">
+                        <input type="radio" name="monto" value="7000" class="radioMonto"> $7.000.-
+                    </label>
+                    <label class="input" style="padding:20px">
+                        <input type="radio" name="monto" value="10000" class="radioMonto"> $10.000.-
+                    </label>
+                    <label class="input" style="padding:20px">
+                        <input type="radio" name="monto" value="otro" class="radioMonto" id="radioOtro"> Otro monto
+                    </label>
+
+                    <label class="input" style="padding:20px" id="inputOtroMonto">
+                        <!-- Campo de texto para ingresar un monto personalizado -->
+                        <input type="number" name="montoPersonalizado" placeholder="Ingresa otro monto" style="width:100%">
+                    </label>
+
+                </div>
+            </section>
+
+            <section class="flexContainer">
+                <div class="divContainer" style="width:100%">
+                    <select class="input" name="frecuencia" style="width:100%" required>
+                        <option value="">Frecuencia</option>
+                        <option value="Por_unica_vez">Por única vez</option>
+                        <option value="Mensual">Mensual</option>
+                    </select>
+                </div>
+            </section>
+
+            <div class="centrar">
+                <input type="submit" value="Continuar" class="enviar">
+            </div>
+        </form>
+    </main>
+{{/partial}}
+{{> templates/baseFondoBlanco }}

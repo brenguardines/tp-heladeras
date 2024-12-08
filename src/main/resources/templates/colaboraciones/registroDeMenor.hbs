@@ -1,0 +1,43 @@
+{{#partial "titulo-y-descripcion"}}
+    <title>Registro de Menor a cargo de Persona Vulnerable</title>
+    <meta name="description" content="Registro de Menor a cargo de Persona Vulnerable">
+{{/partial}}
+
+{{#partial "titulo-h1"}}
+    <h1 class="titulo" style="color: black !important;">Registro de Menor a cargo de Persona Vulnerable</h1>
+{{/partial}}
+
+{{#partial "contenido"}}
+    <main>
+        <form>
+            <section class="flexContainer">
+                <div class="divContainer" style="width:50%">
+                    <input type="text" class="input" required placeholder=" Nombre" style="width:100%">
+                </div>
+                <div class="divContainer" style="width:50%">
+                    <input type="text" class="input" required placeholder=" Apellido" style="width:100%">
+                </div>
+            </section>
+
+            <section class="flexContainer">
+                <div class="divContainer" style="width:100%; position: relative;">
+                    <label style="color: gray !important; font-size: large;">Fecha de Nacimiento</label><br>
+                    <input type="date" class="input" style="width:100%; padding-right: 40px;">
+                    <img src="../img/Calendar.svg" alt="icono-calendario" class="calendar-icon">
+                </div>
+            </section>
+
+            <section class="flexContainer">
+                <div class="divContainer" style="width:98%">
+                    <input type="text" class="input" required placeholder=" Relacion con el Adulto *" style="width:100%">
+                </div>
+            </section>
+
+            <div class="centrar">
+                <input type="submit" value="Registrar" class="enviar">
+            </div>
+        </form>
+    </main>
+{{/partial}}
+
+{{> templates/baseFondoBlanco }}

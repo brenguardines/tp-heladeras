@@ -1,0 +1,48 @@
+{{#partial "titulo-y-descripcion"}}
+    <title>Donar Vianda</title>
+    <meta name="description" content="Donar Vianda">
+{{/partial}}
+
+{{#partial "js-extra"}}
+    <script type="text/javascript" src="/js/popUp.js"></script>
+    <script type="text/javascript" src="/js/donarViandas.js"></script>
+{{/partial}}
+
+{{#partial "titulo-h1"}}
+    <h1 class="titulo" style="color: black !important;">Donar Vianda</h1>
+{{/partial}}
+
+{{#partial "contenido"}}
+    <main>
+        <form action="/tecnico/solucionarIncidente" method="post">
+            <section class="flexContainer">
+                <div class="divContainer" style="width:98%">
+                    <select class="input" style="width:100%; color: grey" name="incidente" required>
+                        <option value="">Incidentes</option>
+                        {{#each incidente}}
+                            <option value="{{this.id}}">{{this.heladera}} - {{this.fechaHora}} - {{this.descripcion}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+            </section>
+
+            <section class="flexContainer">
+                <div class="contenedor-gris d-flex flex-column justify-content-center align-items-center">
+                    <label for="imagenSolucion" class="labelSolucion">Adjuntar imagen</label>
+                    <input type="file" class="inputSolucion" id="imagenSolucion" name="imagenSolucion" required>
+                </div>
+            </section>
+
+            <section class="flexContainer">
+                <div class="divContainer" style="width:100%">
+                    <input type="text" name="comentario" class="input" required placeholder=" Comentario" style="width:100%" value="{{comentario}}">
+                </div>
+            </section>
+
+            <div class="centrar">
+                <input type="submit" value="Continuar" class="enviar" id="solucionExitosaBoton">
+            </div>
+        </form>
+    </main>
+{{/partial}}
+{{> templates/baseFondoBlanco }}

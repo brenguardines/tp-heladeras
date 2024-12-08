@@ -1,0 +1,105 @@
+.imput-texto {
+    border: 1px solid #FFFFFF;
+    content: #FFFFFF !important;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.imput-texto-100 {
+    border: 1px solid #FFFFFF;
+    content: #FFFFFF !important;
+    border-radius: 10px;
+}
+
+.boton-rojo {
+    border: 1px solid #DC143C !important;
+    background-color: #DC143C !important;
+    color: white !important;
+    font-weight:bold !important;
+    border-radius: 30px;
+    padding: 13px !important;  
+}
+
+.enviar{
+    color:white;
+    font-weight: bold;
+    background-color: #DC143C;
+    border-radius: 30px;
+    width: 30%;
+    height: 50px;
+}
+
+.enviarCSV{
+    color:white;
+    font-weight: bold;
+    background-color: #DC143C;
+    border-radius: 30px;
+    width: 40%;
+    height: 50px;
+}
+
+.volver{
+    margin:8px;
+    font-weight: bold;
+    color:#DC143C;
+}
+
+.centrar {
+    text-align: center;
+    margin-bottom: 0;
+}
+.aniadirMenor {
+    width:100%; 
+    padding-right: 40px; 
+    text-align: center; 
+    color: gray;
+}
+
+.hundido:hover {
+    background-color: #e0e0e0; /* Cambia el color de fondo al pasar el ratón */
+}
+
+.hundido:active {
+    background-color: #d0d0d0; /* Cambia el color de fondo cuando el botón está presionado */
+    transform: translateY(4px); /* Desplaza el botón hacia abajo para simular el hundimiento */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Añade una sombra para crear la impresión de profundidad */
+}
+
+.boton-accion {
+    border: 1px solid #DC143C !important;
+    background-color: #DC143C !important;
+    color: white !important;
+    font-weight: bold !important;
+    border-radius: 30px;
+    padding: 13px 20px; /* Ajustar el padding para el tamaño uniforme */
+    text-align: center;
+    cursor: pointer;
+    width: 200px; /* Tamaño uniforme de los botones */
+}
+
+.boton-accion:hover {
+    background-color: #ec7467; /* Color de fondo del botón al pasar el cursor */
+}
+
+.boton-rojo-con-imagen {
+    border: 1px solid #DC143C !important;
+    background-color: #DC143C !important;
+    color: white !important;
+    font-weight: bold !important;
+    border-radius: 30px;
+    padding: 13px; /* Ajusta el padding según sea necesario */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 60px; /* Ajusta el ancho del botón según sea necesario */
+    height: 60px; /* Ajusta la altura del botón según sea necesario */
+    position: relative;
+    overflow: hidden; /* Asegura que la imagen no sobresalga del botón */
+}
+
+.boton-rojo-con-imagen img {
+    max-width: 100%; /* Ajusta el tamaño de la imagen dentro del botón */
+    max-height: 100%; /* Ajusta el tamaño de la imagen dentro del botón */
+    display: block;
+}

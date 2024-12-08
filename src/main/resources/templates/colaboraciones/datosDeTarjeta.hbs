@@ -1,0 +1,56 @@
+{{#partial "titulo-y-descripcion"}}
+    <title>Datos de Tarjeta</title>
+    <meta name="description" content="Datos de Tarjeta">
+{{/partial}}
+
+{{#partial "js-extra"}}
+    <script type="text/javascript" src="/js/popUp.js"></script>
+    <script type="text/javascript" src="/js/vencimientoTarjeta.js"></script>
+{{/partial}}
+
+{{#partial "titulo-h1"}}
+    <h1 class="titulo" style="color: black !important;">Datos de Tarjeta</h1>
+{{/partial}}
+
+{{#partial "contenido"}}
+    <main>
+        <form>
+            <section class="flexContainer">
+                <div class="divContainer" style="width:100%">
+                    <input type="text" class="input" required placeholder=" Numero de Tarjeta" style="width:100%">
+                </div>
+            </section>
+
+            <section class="flexContainer">
+                <div class="divContainer" style="width:100%">
+                    <input type="text" class="input" required placeholder=" Nomrbe que figura en la Tarjeta" style="width:100%">
+                </div>
+            </section>
+
+            <section class="flexContainer">
+                <div class="divContainer" style="width:100%">
+                    <input type="text" class="input" required placeholder=" DNI del Titular" style="width:100%">
+                </div>
+            </section>
+
+            <section class="flexContainer">
+                <div class="divContainer" style="width:100%">
+                    <input type="text" class="input" required placeholder=" Código de Seguridad" style="width:100%">
+                </div>
+            </section>
+
+            <section class="flexContainer">
+                <div class="divContainer" style="width: 100%;">
+                    <label for="expiryDate" class="vencimiento-label" style="color: gray !important; font-size: large; font-weight: normal;">Fecha de vencimiento:</label>
+                    <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YYYY" maxlength="7" required class="input vencimiento-input">
+                    <div id="error-message" class="vencimiento-error-message">Formato inválido o fecha pasada. Usa MM/YYYY.</div>
+                </div>
+            </section>
+
+            <div class="centrar">
+                <input type="submit" value="Continuar" class="enviar" id="colaboracionExitosaBoton">
+            </div>
+        </form>
+    </main>
+{{/partial}}
+{{> templates/baseFondoBlanco }}

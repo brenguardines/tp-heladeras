@@ -1,0 +1,29 @@
+{{#partial "titulo-y-descripcion"}}
+    <title>Error 401</title>
+    <meta name="description" content="Error 401">
+{{/partial}}
+
+{{#partial "js-extra"}}
+    <script type="text/javascript" src="/js/index.js"></script>
+{{/partial}}
+
+{{#partial "contenido"}}
+    <main class="centrar-en-pagina fondo-blanco">
+        <div class="contenedor-flex inverso">
+            <!-- Texto informativo a la izquierda -->
+            <div class="texto-informativo" style="color: black !important;">
+                <h1 class="titulo">Error 401</h1>
+                <br>
+                <h3> No tiene la autorizacion para acceder a esta página.</h3>
+                <br>
+                <button class="boton-rojo" id="empezarIndex">Ingresar</button>
+            </div>
+            <!-- Imagen del error a la derecha -->
+            <div class="imagen-heladera">
+                <img src="../img/error-401.png" alt="error" style="width: 100%;">
+            </div>
+        </div>
+    </main>
+
+{{/partial}}
+{{> templates/baseFondoBlancoSinMenu }}

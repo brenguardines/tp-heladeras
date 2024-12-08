@@ -1,0 +1,194 @@
+.contenedor-gris {
+    background-color: #F3F3F3 !important;
+    border-radius: 20px;
+    height: 400px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+
+.contenedor-blanco {
+    background-color: #F3F3F3 !important;
+    border-radius: 10px;
+}
+
+.cuadrado-borde-negro-relleno-blanco {
+    background-color: white;
+    border: 3px solid black;
+    width: 90px;
+    height: 90px;
+    position: center;
+}
+
+.flexContainer{
+    display: flex;
+    padding: 2%;
+    width:98%;
+}
+
+.divContainer{
+    margin-right: 2%;
+    position: relative; /* Para que el icono se posicione relativo al div */
+}
+
+.imgDerecha{
+    float:right;
+    width:100px;
+    margin-right:100px;
+}
+
+.input {
+    width: 100%;
+    padding-right: 40px; /* Espacio para el icono dentro del campo */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Suaviza la transición del efecto */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+.input:focus {
+    outline: none; /* Quita el borde de enfoque predeterminado */
+}
+
+.calendar-icon {
+    position: absolute;
+    right: 10px; /* Alinea el icono hacia la derecha */
+    top: 50%;
+    transform: translateY(-50%); /* Centra el icono verticalmente */
+    height: 50px; /* Ajusta la altura del icono */
+    width: 50px; /* Ajusta el ancho del icono */
+    pointer-events: none; /* Evita la interferencia con clics */
+    padding-top: 20px;
+}
+
+.calendar-icon {
+    position: absolute;
+    right: 10px; /* Alinea el icono hacia la derecha */
+    top: 50%;
+    transform: translateY(-50%); /* Centra el icono verticalmente */
+    height: 60px; /* Ajusta la altura del icono */
+    width: 60px; /* Ajusta el ancho del icono */
+    pointer-events: none; /* Evita la interferencia con clics */
+}
+/* Contenedor Flex para los botones */
+.boton-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Espacio entre los botones */
+}
+
+.centrar-en-pagina {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f0f0; /* Puedes ajustar el color de fondo */
+    text-align: center; /* Centrar el texto en la página */
+}
+
+.boton-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+body {
+    margin: 0; /* Elimina los márgenes predeterminados */
+    padding: 0; /* Elimina el padding predeterminado */
+}
+
+.header-fijo {
+    position: fixed; /* Fija el encabezado en la parte superior */
+    top: 0; /* Posiciona el encabezado en la parte superior */
+    left: 0; /* Posiciona el encabezado a la izquierda */
+    width: 100%; /* Hace que el encabezado ocupe el ancho completo */
+    background-color: white; /* Color de fondo del encabezado */
+    color: white; /* Color del texto del encabezado */
+    padding: 10px; /* Espaciado interno del encabezado */
+    z-index: 1000; /* Asegura que el encabezado esté sobre otros elementos */
+}
+
+main {
+    margin-top: 60px; /* Ajusta el margen superior para evitar que el contenido quede oculto detrás del encabezado fijo */
+    padding: 20px; /* Padding para el contenido principal */
+}
+
+/* Nueva clase para la etiqueta de la fecha de vencimiento */
+.vencimiento-label {
+    display: block;
+    margin-bottom: 5px; /* Espaciado inferior */
+    font-weight: bold; /* Texto en negrita */
+    font-family: 'Montserrat', sans-serif; /* Tipografía consistente */
+}
+
+/* La clase 'input' ya está definida para el campo de entrada */
+.vencimiento-input {
+    border: 1px solid #DC143C; /* Color del borde */
+    background-color: #F9F9F9; /* Color de fondo */
+    border-radius: 10px; /* Borde redondeado */
+    padding: 10px; /* Espaciado interno */
+    font-family: 'Montserrat', sans-serif; /* Tipografía consistente */
+    color: #333; /* Color del texto */
+}
+
+/* Nueva clase para el mensaje de error */
+.vencimiento-error-message {
+    color: red; /* Color del texto de error */
+    display: none; /* Oculto por defecto */
+    font-size: 0.875em; /* Tamaño del texto */
+    margin-top: 5px; /* Espaciado superior */
+}
+
+.divImagenCentrada {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;     /* Centra verticalmente */
+    width: 100%;             /* Asegura que el contenedor ocupe el 100% del ancho disponible */
+    height: 300px;           /* Puedes ajustar la altura según el diseño */
+}
+
+.imagenCentrada {
+    max-width: 300px;        /* Ajusta el tamaño de la imagen según sea necesario */
+    height: auto;
+}
+
+
+.contenedor-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10%;
+    flex-wrap: wrap; /* Para que los elementos se ajusten en pantallas pequeñas */
+}
+
+.imagen-heladera {
+    flex: 1;
+    max-width: 40%;
+    padding-left: 20px; /* Cambiado a padding-left para que la imagen esté a la derecha */
+}
+
+.texto-informativo {
+    flex: 1;
+    padding-right: 20px; /* Cambiado a padding-right para que el texto esté a la izquierda */
+}
+
+/* Ajustes responsivos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .contenedor-flex {
+        flex-direction: column;
+        text-align: center;
+        padding: 5%; /* Reduce el padding en pantallas pequeñas */
+    }
+
+    .imagen-heladera {
+        max-width: 100%;
+        padding-left: 0; /* Se elimina el padding en pantallas pequeñas */
+    }
+
+    .texto-informativo {
+        padding-right: 0; /* Se elimina el padding en pantallas pequeñas */
+    }
+}

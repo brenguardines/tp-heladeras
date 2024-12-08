@@ -1,0 +1,84 @@
+{{#partial "titulo-y-descripcion"}}
+    <title>Hacerce cargo de una Heladera</title>
+    <meta name="description" content="Hacerce cargo de una Heladera">
+{{/partial}}
+
+{{#partial "js-extra"}}
+    <script type="text/javascript" src="/js/popUp.js"></script>
+    <script type="text/javascript" src="/js/buscarRecomendacion.js"></script>
+{{/partial}}
+
+{{#partial "titulo-h1"}}
+    <h1 class="titulo" style="color: black !important;">Hacerce cargo de una Heladera</h1>
+{{/partial}}
+
+{{#partial "contenido"}}
+    <main style="height: 85%">
+        <form method="post" action="/colaboraciones/hacerCargoDeUnaHeladera">
+            <section class="flexContainer">
+                <div class="divContainer" style="width:95%; position: relative;">
+                    <input type="text" name="calle" class="input" required placeholder=" Calle" style="width:100%">
+                </div>
+                <!--<div class="divContainer" style="width:5%; position: relative;">
+                    <label style="color: gray !important; font-size: medium;">Generar</label><br>
+                    <button type="button" class="boton-rojo-con-imagen hundido" id="buscarRecomendacion">
+                        <img src="../img/lupa-blanca.svg" alt="icono-lupa">
+                    </button>
+                </div>-->
+            </section>
+            <section class="flexContainer">
+                <div class="divContainer" style="width:95%; position: relative;">
+                    <input type="number" name="altura" class="input" required placeholder=" Altura" style="width:100%">
+                </div>
+            </section>
+
+            <section class="flexContainer">
+                <div class="divContainer" style="width:95%; position: relative;">
+                    <input type="number" name="codigoPostal" class="input" required placeholder=" Código Postal" style="width:100%">
+                </div>
+            </section>
+
+            <section class="flexContainer">
+                <div class="divContainer" style="width:98%">
+                    <input type="text" class="input" name="nombre" required placeholder=" Nombre de la Heladera" style="width:100%">
+                </div>
+            </section>
+
+            <section class="flexContainer">
+                <div class="divContainer" style="width:98%">
+                    <input type="text" class="input" name="descripcion" required placeholder=" Descripción" style="width:100%">
+                </div>
+            </section>
+
+            <section class="flexContainer">
+                <div class="divContainer" style="width:98%">
+                    <select class="input" style="width:100%; color: grey" name="modelo" required> <!-- TODO VOLVER DESPLEGABLE Y UNIFICARLO CON MARCA -->
+                        <option value="">Modelo</option>
+                        {{#each modelos}}
+                        <option value="{{this.nombre}}">{{this.nombre}}. {{this.marca}}. Temp. Máx: {{this.temperaturaMaxima}}. Temp. Mínima: {{this.temperaturaMinima}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+            </section>
+            <section class="flexContainer">
+                <div class="divContainer" style="width:98%">
+                    <input type="number" class="input" name="longitud" required placeholder=" Longitud de la Ubicación" style="width:100%">
+                </div>
+            </section>
+            <section class="flexContainer">
+                <div class="divContainer" style="width:98%">
+                    <input type="number" class="input" name="latitud" required placeholder=" Latitud de la Ubicación" style="width:100%">
+                </div>
+            </section>
+            <section class="flexContainer">
+            <label class="input" style="padding:20px; color: grey">
+                <input type="radio" name="monto" value="otro" class="radioMonto" id="radioOtro"> Otro Modelo
+            </label>
+            </section>
+            <div class="centrar">
+                <input type="submit" value="Continuar" class="enviar" id="colaboracionExitosaBoton">
+            </div>
+        </form>
+    </main>
+{{/partial}}
+{{> templates/baseFondoBlanco }}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Menu Administrador</title>
+    <meta name="description" content="Menu Administrador">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../css/texto.css">
+    <link rel="stylesheet" type="text/css" href="../css/fondos.css">
+    <link rel="stylesheet" type="text/css" href="../css/botones.css">
+    <link rel="stylesheet" type="text/css" href="../css/contenedores.css">
+    <!--
+     <link rel="stylesheet" type="text/css" href="../css/canjeo.css">
+    <link rel="stylesheet" type="text/css" href="../css/confirmar.css">
+    <link rel="stylesheet" type="text/css" href="../css/pantallaPuntos.css">
+    <link rel="stylesheet" type="text/css" href="../css/pocosPuntos.css"> -->
+    <link rel="stylesheet" type="text/css" href="../css/menu.css">
+
+    <script type="text/javascript" src="/js/menu.js"></script>
+    <script type="text/javascript" src="/js/menuAdmin.js"></script>
+</head>
+
+<body class="fondo-blanco tipografia-monserrat centrar-en-pagina">
+<header class="header-fijo">
+    <button id="burger-menu" class="burger"></button>
+    <div class="background"></div>
+    <div class="menu">
+        <nav>
+            <a href="gestionarHeladeras.html">Gestionar Heladeras</a>
+            <a href="gestionarUsuarios.html">Gestionar Usuarios</a>
+            <a href="cargaArchivoCSV.html">Carga de CSV de Colaboraciones</a>
+            <a href="visualizacionAlertas.html">Visualización de Alertas</a>
+            <a href="visualizacionReportes.html">Visualización de Reportes</a>
+            <a href="gestionarPersonasVulnerables.html">Gestionar Personas en Situacion Vulnerables</a>
+
+        </nav>
+    </div>
+    <!-- <a href="menu.html" class="volver">Volver</a> -->
+</header>
+
+<main>
+    <h1 class="titulo">Menu Administrador:</h1> <br>
+    <section class="boton-container">
+        <button class="boton-accion hundido" id="gestionHeladeras">Gestionar Heladeras</button>
+        <button class="boton-accion hundido" id="gestionUsuarios">Gestionar Usuarios</button>
+        <button class="boton-accion hundido" id="cargaCSV">Cargar CSV</button>
+        <button class="boton-accion hundido" id="verFallas">Ver Fallas</button>
+        <button class="boton-accion hundido" id="verAlertas">Ver Alertas</button>
+        <button class="boton-accion hundido" id="gestionPersonasVulnerables">Gestionar Personas en Situacion Vulnerable</button>
+
+    </section>
+</main>
+</body>
+</html>

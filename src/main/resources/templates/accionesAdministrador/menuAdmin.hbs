@@ -1,0 +1,24 @@
+{{#partial "titulo-y-descripcion"}}
+    <title>Menu Administrador</title>
+    <meta name="description" content="Menu Administrador">
+{{/partial}}
+
+{{#partial "js-extra"}}
+    <script type="text/javascript" src="/js/menuAdmin.js"></script>
+{{/partial}}
+
+{{#partial "contenido"}}
+    <main>
+        <h1 class="titulo">Menu Administrador:</h1> <br>
+        <section class="boton-container">
+            <button class="boton-accion hundido" id="gestionHeladeras">Gestionar Heladeras</button>
+            <button class="boton-accion hundido" id="gestionUsuarios">Gestionar Usuarios</button>
+            <button class="boton-accion hundido" id="cargaCSV">Cargar CSV</button>
+            <!--<button class="boton-accion hundido" id="verFallas">Ver Fallas</button>-->
+            <button class="boton-accion hundido" id="verAlertas">Ver Alertas</button>
+            <button class="boton-accion hundido" id="verReportes">Ver Reportes</button>
+            <button class="boton-accion hundido" id="gestionPersonasVulnerables">Gestionar Personas en Situacion Vulnerable</button>
+        </section>
+    </main>
+{{/partial}}
+{{> templates/baseFondoBlancoSinMenu }}

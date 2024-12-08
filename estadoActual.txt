@@ -1,0 +1,20 @@
+--------------------------------------------------------------------------------------------------------------------------------
+FALTA HACER!!!!!!
+------------------
+
+Correciones entrega 4:
+----------------------
+- GestionarHeladeras.hbs
+- GestionarUsuarios.hbs
+- Initializer.java (utils) -> RELLENAR LA DB CON REGISTROS PARA HACER PRUEBAS (CON UN ARCHIVO SQL. Investigar)
+- Generar controllers faltantes (DonarOferta)
+- Falta persistir todo lo de persona juridica Y humana 
+
+Cosas a realizar entrega 6:
+---------------------------
+1. Diagrama de Despliegue de la solución actual.
+- Se deberá desplegar el sistema en la nube para que pueda ser accedido por el público general.
+2. Diagrama de Despliegue de la solución propuesta. (Se deberá generar una propuesta para separar el monolito actual en distintos servicios.)
+3. Implementación de Herramientas de Observabilidad. (Incorporar herramientas que permitan la observabilidad del sistema.)
+4. Implementación de un SSO. (En otra rama)
+5. Implementación de Herramienta de Análisis de Vulnerabilidades de código estático. (Incorporar herramientas de seguridad.)

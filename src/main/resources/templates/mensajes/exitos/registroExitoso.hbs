@@ -1,0 +1,21 @@
+{{#partial "titulo-y-descripcion"}}
+    <title>Registro Exitoso</title>
+    <meta name="description" content="Registro Exitoso">
+{{/partial}}
+
+{{# partial "css-extra"}}
+    <link rel="stylesheet" type="text/css" href="../css/registroExitoso.js">
+{{/partial}}
+
+{{#partial "js-extra"}}
+    <script type="text/javascript" src="/js/registroExitoso.js"></script>
+{{/partial}}
+<script type="text/javascript" src="/js/menu.js"></script>
+
+{{#partial "mensaje-con-imagen"}}
+        <img src="../img/logoDeExito.svg" alt="logoDeExito">
+        <p><strong>El registro ha sido exitoso</strong></p>
+        <input type="submit" value="Ir a la pantalla de Login" class="enviar" id="registroExitosoBoton">
+{{/partial}}
+
+{{> templates/baseMensaje }}

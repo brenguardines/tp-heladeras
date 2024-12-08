@@ -1,0 +1,25 @@
+/* Estilos para el popup */
+.popup {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+.popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+}
+.popup-content img {
+    display: block;
+    margin: 0 auto;
+}
+.popup-content p {
+    text-align: center;
+}
