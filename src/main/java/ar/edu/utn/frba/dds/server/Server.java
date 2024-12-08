@@ -54,11 +54,11 @@ public class Server {
             });
 
             config.fileRenderer(new JavalinRenderer().register("hbs", (path, model, context) -> {
-                Handlebars handlebars = new Handlebars(new ClassPathTemplateLoader("/templates", ""));
-
+                Handlebars handlebars = new Handlebars();
+                Template template = null;
                 try {
-                    String templatePath = "templates/" + (path.endsWith(".hbs") ? path.replace(".hbs", "") : path);
-                    Template template = handlebars.compile(templatePath);
+                    template = handlebars.compile(
+                        "templates/" + path.replace(".hbs", ""));
                     return template.apply(model);
                 } catch (IOException e) {
                     e.printStackTrace();
