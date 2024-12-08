@@ -39,6 +39,14 @@ public class Router {
         app.get("/login", ctx ->ctx.render("indexYLogin/login.hbs"));
         app.post("/login", ServiceLocator.instanceOf(AuthController.class)::login);
 
+        // forma humana
+        app.get("/formaDeContribucionHumana", ctx -> {
+                Map model = new HashMap<>();
+                model.put("esColaboradorHumano",true);
+                ctx.render("/colaboraciones/formasDeContribucion/formaDeContribucionHumana.hbs", model);},
+            RolDeUsuario.COLABORADOR_HUMANO);
+
+
         //registrar a un nuevo colaborador humano
         app.get("/personaHumana/register", ServiceLocator.instanceOf(PersonaHumanaController.class)::create);
         app.post("/personaHumana", ServiceLocator.instanceOf(PersonaHumanaController.class)::save);
@@ -85,12 +93,6 @@ public class Router {
                     ctx.render("/colaboraciones/formasDeContribucion/formaDeContribucionJuridica.hbs", model);},
                 RolDeUsuario.COLABORADOR_JURIDICO);
 
-        // forma humana
-        app.get("/formaDeContribucionHumana", ctx -> {
-                    Map model = new HashMap<>();
-                    model.put("esColaboradorHumano",true);
-                    ctx.render("/colaboraciones/formasDeContribucion/formaDeContribucionHumana.hbs", model);},
-                RolDeUsuario.COLABORADOR_HUMANO);
 
         // donar una oferta
         app.get("/colaboraciones/donarOferta", ServiceLocator.instanceOf(DonacionDeOfertaController.class)::create, RolDeUsuario.COLABORADOR_JURIDICO);
