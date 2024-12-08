@@ -55,7 +55,7 @@ public class Router {
         app.get("/formaDeContribucionJuridica", ctx -> {
                 Map model = new HashMap<>();
                 model.put("esColaboradorJuridico",true);
-                ctx.render("/colaboraciones/formasDeContribucion/formaDeContribucionJuridica.hbs", model);},
+                ctx.render("colaboraciones/formasDeContribucion/formaDeContribucionJuridica.hbs", model);},
             RolDeUsuario.COLABORADOR_JURIDICO);
 
 
@@ -63,7 +63,7 @@ public class Router {
         app.get("/formaDeContribucionHumana", ctx -> {
                 Map model = new HashMap<>();
                 model.put("esColaboradorHumano",true);
-                ctx.render("/colaboraciones/formasDeContribucion/formaDeContribucionHumana.hbs", model);},
+                ctx.render("colaboraciones/formasDeContribucion/formaDeContribucionHumana.hbs", model);},
             RolDeUsuario.COLABORADOR_HUMANO);
 
 
