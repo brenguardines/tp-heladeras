@@ -168,8 +168,6 @@
       <resource>
         <directory>src/main/resources</directory>
         <includes>
-          <include>META-INF/persistence.xml</include>
-          <include>**/*.hbs</include>
           <include>**/*</include>
         </includes>
       </resource>

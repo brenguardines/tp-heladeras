@@ -7,6 +7,7 @@ import ar.edu.utn.frba.dds.utils.JavalinRenderer;
 import ar.edu.utn.frba.dds.utils.PrettyProperties;
 import com.github.jknack.handlebars.Handlebars;
 import com.github.jknack.handlebars.Template;
+import com.github.jknack.handlebars.io.ClassPathTemplateLoader;
 import io.javalin.Javalin;
 import io.javalin.config.JavalinConfig;
 import io.javalin.http.HttpStatus;
@@ -53,11 +54,9 @@ public class Server {
             });
 
             config.fileRenderer(new JavalinRenderer().register("hbs", (path, model, context) -> {
-                Handlebars handlebars = new Handlebars();
-                Template template = null;
+                Handlebars handlebars = new Handlebars(new ClassPathTemplateLoader("/templates", ".hbs"));
                 try {
-                    template = handlebars.compile(
-                            "templates/" + path.replace(".hbs", ""));
+                    Template template = handlebars.compile(path);
                     return template.apply(model);
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -65,6 +64,7 @@ public class Server {
                     return "No se encuentra la página indicada...";
                 }
             }));
+
         };
     }
 }
