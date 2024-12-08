@@ -39,13 +39,6 @@ public class Router {
         app.get("/login", ctx ->ctx.render("indexYLogin/login.hbs"));
         app.post("/login", ServiceLocator.instanceOf(AuthController.class)::login);
 
-        // forma humana
-        app.get("/formaDeContribucionHumana", ctx -> {
-                Map model = new HashMap<>();
-                model.put("esColaboradorHumano",true);
-                ctx.render("/colaboraciones/formasDeContribucion/formaDeContribucionHumana.hbs", model);},
-            RolDeUsuario.COLABORADOR_HUMANO);
-
 
         //registrar a un nuevo colaborador humano
         app.get("/personaHumana/register", ServiceLocator.instanceOf(PersonaHumanaController.class)::create);
@@ -56,6 +49,23 @@ public class Router {
         app.post("/personaJuridica", ServiceLocator.instanceOf(PersonaJuridicaController.class)::save);
 
         app.get("/registroExitoso", ctx -> ctx.render("/mensajes/exitos/registroExitoso.hbs"));
+
+        // FORMAS DE CONTRIBUCIÓN --------------------------------------------------------------------------------------------------------
+        // forma juridica
+        app.get("/formaDeContribucionJuridica", ctx -> {
+                Map model = new HashMap<>();
+                model.put("esColaboradorJuridico",true);
+                ctx.render("/colaboraciones/formasDeContribucion/formaDeContribucionJuridica.hbs", model);},
+            RolDeUsuario.COLABORADOR_JURIDICO);
+
+
+        // forma humana
+        app.get("/formaDeContribucionHumana", ctx -> {
+                Map model = new HashMap<>();
+                model.put("esColaboradorHumano",true);
+                ctx.render("/colaboraciones/formasDeContribucion/formaDeContribucionHumana.hbs", model);},
+            RolDeUsuario.COLABORADOR_HUMANO);
+
 
         // canje
         app.get("/canjeDePuntos", ServiceLocator.instanceOf(PersonaHumanaController.class)::canjePuntos);
@@ -84,14 +94,6 @@ public class Router {
                     model.put("esAdministrador",true);
                     ctx.render("/accionesAdministrador/menuAdmin.hbs", model);},
                 RolDeUsuario.ADMINISTRADOR);
-
-        // FORMAS DE CONTRIBUCIÓN --------------------------------------------------------------------------------------------------------
-        // forma juridica
-        app.get("/formaDeContribucionJuridica", ctx -> {
-                    Map model = new HashMap<>();
-                    model.put("esColaboradorJuridico",true);
-                    ctx.render("/colaboraciones/formasDeContribucion/formaDeContribucionJuridica.hbs", model);},
-                RolDeUsuario.COLABORADOR_JURIDICO);
 
 
         // donar una oferta
